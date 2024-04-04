@@ -7,16 +7,36 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18BCC1012BBEA03F00398932 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCC1002BBEA03F00398932 /* AuthButton.swift */; };
+		18BCC10B2BBEA0C900398932 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCC10A2BBEA0C900398932 /* OnboardingView.swift */; };
+		18BCC10D2BBEA0CF00398932 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCC10C2BBEA0CF00398932 /* RegisterView.swift */; };
+		18BCC10F2BBEA0D500398932 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCC10E2BBEA0D500398932 /* LoginView.swift */; };
+		18BCC1112BBEA0DA00398932 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCC1102BBEA0DA00398932 /* HomeView.swift */; };
+		18BCC1132BBEA0DF00398932 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCC1122BBEA0DF00398932 /* RootView.swift */; };
+		18BCC1152BBEA0E800398932 /* TriangleFinderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCC1142BBEA0E800398932 /* TriangleFinderView.swift */; };
+		18BCC1172BBEA0EF00398932 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCC1162BBEA0EF00398932 /* SettingsView.swift */; };
+		18BCC1192BBEA10A00398932 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCC1182BBEA10A00398932 /* OnboardingViewModel.swift */; };
+		18BCC11B2BBEA11700398932 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCC11A2BBEA11700398932 /* RegisterViewModel.swift */; };
+		18BCC11D2BBEA11F00398932 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCC11C2BBEA11F00398932 /* LoginViewModel.swift */; };
 		AA5B23BA2BBE9E98007F708F /* HayattaKalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5B23B92BBE9E98007F708F /* HayattaKalApp.swift */; };
-		AA5B23BC2BBE9E98007F708F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5B23BB2BBE9E98007F708F /* ContentView.swift */; };
 		AA5B23BE2BBE9E99007F708F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5B23BD2BBE9E99007F708F /* Assets.xcassets */; };
 		AA5B23C12BBE9E99007F708F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5B23C02BBE9E99007F708F /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		18BCC1002BBEA03F00398932 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
+		18BCC10A2BBEA0C900398932 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
+		18BCC10C2BBEA0CF00398932 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
+		18BCC10E2BBEA0D500398932 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		18BCC1102BBEA0DA00398932 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		18BCC1122BBEA0DF00398932 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		18BCC1142BBEA0E800398932 /* TriangleFinderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleFinderView.swift; sourceTree = "<group>"; };
+		18BCC1162BBEA0EF00398932 /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		18BCC1182BBEA10A00398932 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
+		18BCC11A2BBEA11700398932 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		18BCC11C2BBEA11F00398932 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		AA5B23B62BBE9E98007F708F /* HayattaKal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HayattaKal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA5B23B92BBE9E98007F708F /* HayattaKalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HayattaKalApp.swift; sourceTree = "<group>"; };
-		AA5B23BB2BBE9E98007F708F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA5B23BD2BBE9E99007F708F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA5B23C02BBE9E99007F708F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -32,6 +52,119 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18BCC0FB2BBEA00300398932 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AA5B23B92BBE9E98007F708F /* HayattaKalApp.swift */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		18BCC0FC2BBEA00600398932 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA5B23BD2BBE9E99007F708F /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		18BCC0FD2BBEA00D00398932 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				18BCC0FF2BBEA02400398932 /* Components */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		18BCC0FE2BBEA01400398932 /* Features */ = {
+			isa = PBXGroup;
+			children = (
+				18BCC1022BBEA04900398932 /* Authentication */,
+				18BCC1062BBEA06D00398932 /* Root */,
+				18BCC1072BBEA08600398932 /* Home */,
+				18BCC1082BBEA0A100398932 /* TriangleFinder */,
+				18BCC1092BBEA0AD00398932 /* Settings */,
+			);
+			path = Features;
+			sourceTree = "<group>";
+		};
+		18BCC0FF2BBEA02400398932 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				18BCC1002BBEA03F00398932 /* AuthButton.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		18BCC1022BBEA04900398932 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+				18BCC1052BBEA06100398932 /* Onboarding */,
+				18BCC1042BBEA05D00398932 /* Register */,
+				18BCC1032BBEA05700398932 /* Login */,
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		18BCC1032BBEA05700398932 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				18BCC10E2BBEA0D500398932 /* LoginView.swift */,
+				18BCC11C2BBEA11F00398932 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		18BCC1042BBEA05D00398932 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				18BCC10C2BBEA0CF00398932 /* RegisterView.swift */,
+				18BCC11A2BBEA11700398932 /* RegisterViewModel.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		18BCC1052BBEA06100398932 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				18BCC10A2BBEA0C900398932 /* OnboardingView.swift */,
+				18BCC1182BBEA10A00398932 /* OnboardingViewModel.swift */,
+			);
+			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		18BCC1062BBEA06D00398932 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+				18BCC1122BBEA0DF00398932 /* RootView.swift */,
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		18BCC1072BBEA08600398932 /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				18BCC1102BBEA0DA00398932 /* HomeView.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
+		18BCC1082BBEA0A100398932 /* TriangleFinder */ = {
+			isa = PBXGroup;
+			children = (
+				18BCC1142BBEA0E800398932 /* TriangleFinderView.swift */,
+			);
+			path = TriangleFinder;
+			sourceTree = "<group>";
+		};
+		18BCC1092BBEA0AD00398932 /* Settings */ = {
+			isa = PBXGroup;
+			children = (
+				18BCC1162BBEA0EF00398932 /* SettingsView.swift */,
+			);
+			path = Settings;
+			sourceTree = "<group>";
+		};
 		AA5B23AD2BBE9E98007F708F = {
 			isa = PBXGroup;
 			children = (
@@ -51,9 +184,10 @@
 		AA5B23B82BBE9E98007F708F /* HayattaKal */ = {
 			isa = PBXGroup;
 			children = (
-				AA5B23B92BBE9E98007F708F /* HayattaKalApp.swift */,
-				AA5B23BB2BBE9E98007F708F /* ContentView.swift */,
-				AA5B23BD2BBE9E99007F708F /* Assets.xcassets */,
+				18BCC0FB2BBEA00300398932 /* App */,
+				18BCC0FE2BBEA01400398932 /* Features */,
+				18BCC0FD2BBEA00D00398932 /* Product */,
+				18BCC0FC2BBEA00600398932 /* Resources */,
 				AA5B23BF2BBE9E99007F708F /* Preview Content */,
 			);
 			path = HayattaKal;
@@ -137,7 +271,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA5B23BC2BBE9E98007F708F /* ContentView.swift in Sources */,
+				18BCC10B2BBEA0C900398932 /* OnboardingView.swift in Sources */,
+				18BCC10D2BBEA0CF00398932 /* RegisterView.swift in Sources */,
+				18BCC1012BBEA03F00398932 /* AuthButton.swift in Sources */,
+				18BCC1172BBEA0EF00398932 /* SettingsView.swift in Sources */,
+				18BCC11B2BBEA11700398932 /* RegisterViewModel.swift in Sources */,
+				18BCC1112BBEA0DA00398932 /* HomeView.swift in Sources */,
+				18BCC1192BBEA10A00398932 /* OnboardingViewModel.swift in Sources */,
+				18BCC1152BBEA0E800398932 /* TriangleFinderView.swift in Sources */,
+				18BCC11D2BBEA11F00398932 /* LoginViewModel.swift in Sources */,
+				18BCC1132BBEA0DF00398932 /* RootView.swift in Sources */,
+				18BCC10F2BBEA0D500398932 /* LoginView.swift in Sources */,
 				AA5B23BA2BBE9E98007F708F /* HayattaKalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

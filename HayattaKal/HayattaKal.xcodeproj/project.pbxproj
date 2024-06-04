@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		181C1E022BFB8DD500B6FD55 /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181C1E012BFB8DD500B6FD55 /* Colors.xcassets */; };
+		181C1E042BFB8DE900B6FD55 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 181C1E032BFB8DE900B6FD55 /* Images.xcassets */; };
 		18BCC1012BBEA03F00398932 /* AuthButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCC1002BBEA03F00398932 /* AuthButton.swift */; };
 		18BCC10B2BBEA0C900398932 /* OnboardingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCC10A2BBEA0C900398932 /* OnboardingView.swift */; };
 		18BCC10D2BBEA0CF00398932 /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCC10C2BBEA0CF00398932 /* RegisterView.swift */; };
@@ -18,12 +20,15 @@
 		18BCC1192BBEA10A00398932 /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCC1182BBEA10A00398932 /* OnboardingViewModel.swift */; };
 		18BCC11B2BBEA11700398932 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCC11A2BBEA11700398932 /* RegisterViewModel.swift */; };
 		18BCC11D2BBEA11F00398932 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18BCC11C2BBEA11F00398932 /* LoginViewModel.swift */; };
+		18C0C2552BFB931E00D1393C /* OnboardingModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18C0C2542BFB931E00D1393C /* OnboardingModel.swift */; };
 		AA5B23BA2BBE9E98007F708F /* HayattaKalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5B23B92BBE9E98007F708F /* HayattaKalApp.swift */; };
 		AA5B23BE2BBE9E99007F708F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5B23BD2BBE9E99007F708F /* Assets.xcassets */; };
 		AA5B23C12BBE9E99007F708F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5B23C02BBE9E99007F708F /* Preview Assets.xcassets */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		181C1E012BFB8DD500B6FD55 /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		181C1E032BFB8DE900B6FD55 /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		18BCC1002BBEA03F00398932 /* AuthButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButton.swift; sourceTree = "<group>"; };
 		18BCC10A2BBEA0C900398932 /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
 		18BCC10C2BBEA0CF00398932 /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
@@ -35,6 +40,7 @@
 		18BCC1182BBEA10A00398932 /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		18BCC11A2BBEA11700398932 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
 		18BCC11C2BBEA11F00398932 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		18C0C2542BFB931E00D1393C /* OnboardingModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingModel.swift; sourceTree = "<group>"; };
 		AA5B23B62BBE9E98007F708F /* HayattaKal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HayattaKal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA5B23B92BBE9E98007F708F /* HayattaKalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HayattaKalApp.swift; sourceTree = "<group>"; };
 		AA5B23BD2BBE9E99007F708F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -64,6 +70,8 @@
 			isa = PBXGroup;
 			children = (
 				AA5B23BD2BBE9E99007F708F /* Assets.xcassets */,
+				181C1E012BFB8DD500B6FD55 /* Colors.xcassets */,
+				181C1E032BFB8DE900B6FD55 /* Images.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -128,6 +136,7 @@
 			isa = PBXGroup;
 			children = (
 				18BCC10A2BBEA0C900398932 /* OnboardingView.swift */,
+				18C0C2542BFB931E00D1393C /* OnboardingModel.swift */,
 				18BCC1182BBEA10A00398932 /* OnboardingViewModel.swift */,
 			);
 			path = Onboarding;
@@ -259,6 +268,8 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				181C1E022BFB8DD500B6FD55 /* Colors.xcassets in Resources */,
+				181C1E042BFB8DE900B6FD55 /* Images.xcassets in Resources */,
 				AA5B23C12BBE9E99007F708F /* Preview Assets.xcassets in Resources */,
 				AA5B23BE2BBE9E99007F708F /* Assets.xcassets in Resources */,
 			);
@@ -282,6 +293,7 @@
 				18BCC11D2BBEA11F00398932 /* LoginViewModel.swift in Sources */,
 				18BCC1132BBEA0DF00398932 /* RootView.swift in Sources */,
 				18BCC10F2BBEA0D500398932 /* LoginView.swift in Sources */,
+				18C0C2552BFB931E00D1393C /* OnboardingModel.swift in Sources */,
 				AA5B23BA2BBE9E98007F708F /* HayattaKalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

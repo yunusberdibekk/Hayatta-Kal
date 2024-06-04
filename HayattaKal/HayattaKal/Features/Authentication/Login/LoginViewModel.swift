@@ -6,3 +6,16 @@
 //
 
 import Foundation
+
+class LoginViewModel: ObservableObject {
+    @Published var username: String = ""
+    @Published var password: String = ""
+
+    var isValid: Bool {
+        !(username.isEmpty || password.isEmpty)
+    }
+
+    func login() {
+        if isValid {}
+    }
+}

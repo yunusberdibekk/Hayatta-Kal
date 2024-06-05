@@ -11,6 +11,11 @@
 		AA5B23BC2BBE9E98007F708F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5B23BB2BBE9E98007F708F /* ContentView.swift */; };
 		AA5B23BE2BBE9E99007F708F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5B23BD2BBE9E99007F708F /* Assets.xcassets */; };
 		AA5B23C12BBE9E99007F708F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5B23C02BBE9E99007F708F /* Preview Assets.xcassets */; };
+		F091EF7E2C10947400EB03EA /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F091EF7D2C10947400EB03EA /* BaseView.swift */; };
+		F091EF802C10947A00EB03EA /* BaseBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F091EF7F2C10947A00EB03EA /* BaseBodyView.swift */; };
+		F091EF822C1094A700EB03EA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F091EF812C1094A700EB03EA /* Colors.xcassets */; };
+		F091EF842C1094AE00EB03EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F091EF832C1094AE00EB03EA /* Images.xcassets */; };
+		F0A5862C2C0F9D0D00473198 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0A5862B2C0F9D0D00473198 /* Launch Screen.storyboard */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +24,11 @@
 		AA5B23BB2BBE9E98007F708F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA5B23BD2BBE9E99007F708F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA5B23C02BBE9E99007F708F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F091EF7D2C10947400EB03EA /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		F091EF7F2C10947A00EB03EA /* BaseBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBodyView.swift; sourceTree = "<group>"; };
+		F091EF812C1094A700EB03EA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		F091EF832C1094AE00EB03EA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F0A5862B2C0F9D0D00473198 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,10 +61,15 @@
 		AA5B23B82BBE9E98007F708F /* HayattaKal */ = {
 			isa = PBXGroup;
 			children = (
-				AA5B23B92BBE9E98007F708F /* HayattaKalApp.swift */,
-				AA5B23BB2BBE9E98007F708F /* ContentView.swift */,
-				AA5B23BD2BBE9E99007F708F /* Assets.xcassets */,
+				F0A586232C0F9CBD00473198 /* App */,
+				F0A586242C0F9CC000473198 /* Base */,
+				F0A586252C0F9CC500473198 /* Core */,
+				F0A586262C0F9CCB00473198 /* Models */,
 				AA5B23BF2BBE9E99007F708F /* Preview Content */,
+				F0A586272C0F9CD300473198 /* Product */,
+				F0A586282C0F9CD800473198 /* Resources */,
+				F0A586292C0F9CE600473198 /* Scenes */,
+				F0A5862A2C0F9CEE00473198 /* Utilities */,
 			);
 			path = HayattaKal;
 			sourceTree = "<group>";
@@ -65,6 +80,126 @@
 				AA5B23C02BBE9E99007F708F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F0A586232C0F9CBD00473198 /* App */ = {
+			isa = PBXGroup;
+			children = (
+				AA5B23B92BBE9E98007F708F /* HayattaKalApp.swift */,
+				F0A5862B2C0F9D0D00473198 /* Launch Screen.storyboard */,
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		F0A586242C0F9CC000473198 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				F0A586312C0F9DE000473198 /* View */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		F0A586252C0F9CC500473198 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				F0A586322C0F9DE600473198 /* NetworkManager */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		F0A586262C0F9CCB00473198 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		F0A586272C0F9CD300473198 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				F0A586332C0F9E3D00473198 /* Components */,
+				F0A586342C0F9E4700473198 /* Modifiers */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		F0A586282C0F9CD800473198 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				AA5B23BD2BBE9E99007F708F /* Assets.xcassets */,
+				F091EF812C1094A700EB03EA /* Colors.xcassets */,
+				F091EF832C1094AE00EB03EA /* Images.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		F0A586292C0F9CE600473198 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				AA5B23BB2BBE9E98007F708F /* ContentView.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F0A5862A2C0F9CEE00473198 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F0A5862D2C0F9D4100473198 /* Constants */,
+				F0A5862E2C0F9D6400473198 /* Endpoint */,
+				F0A5862F2C0F9D6C00473198 /* Extension */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F0A5862D2C0F9D4100473198 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		F0A5862E2C0F9D6400473198 /* Endpoint */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Endpoint;
+			sourceTree = "<group>";
+		};
+		F0A5862F2C0F9D6C00473198 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		F0A586312C0F9DE000473198 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				F091EF7F2C10947A00EB03EA /* BaseBodyView.swift */,
+				F091EF7D2C10947400EB03EA /* BaseView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		F0A586322C0F9DE600473198 /* NetworkManager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		F0A586332C0F9E3D00473198 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F0A586342C0F9E4700473198 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Modifiers;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,6 +260,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0A5862C2C0F9D0D00473198 /* Launch Screen.storyboard in Resources */,
+				F091EF842C1094AE00EB03EA /* Images.xcassets in Resources */,
+				F091EF822C1094A700EB03EA /* Colors.xcassets in Resources */,
 				AA5B23C12BBE9E99007F708F /* Preview Assets.xcassets in Resources */,
 				AA5B23BE2BBE9E99007F708F /* Assets.xcassets in Resources */,
 			);
@@ -137,6 +275,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F091EF7E2C10947400EB03EA /* BaseView.swift in Sources */,
+				F091EF802C10947A00EB03EA /* BaseBodyView.swift in Sources */,
 				AA5B23BC2BBE9E98007F708F /* ContentView.swift in Sources */,
 				AA5B23BA2BBE9E98007F708F /* HayattaKalApp.swift in Sources */,
 			);
@@ -275,9 +415,12 @@
 				DEVELOPMENT_TEAM = 46PR5V47LD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Hayatta Kal";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -304,9 +447,12 @@
 				DEVELOPMENT_TEAM = 46PR5V47LD;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = "Hayatta Kal";
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.lifestyle";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UILaunchStoryboardName = "Launch Screen.storyboard";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (

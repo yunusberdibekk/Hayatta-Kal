@@ -8,27 +8,43 @@
 
 /* Begin PBXBuildFile section */
 		AA5B23BA2BBE9E98007F708F /* HayattaKalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5B23B92BBE9E98007F708F /* HayattaKalApp.swift */; };
-		AA5B23BC2BBE9E98007F708F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5B23BB2BBE9E98007F708F /* ContentView.swift */; };
 		AA5B23BE2BBE9E99007F708F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5B23BD2BBE9E99007F708F /* Assets.xcassets */; };
 		AA5B23C12BBE9E99007F708F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5B23C02BBE9E99007F708F /* Preview Assets.xcassets */; };
+		F02225C32C1289E100636DC4 /* DETECTOR.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F02225C22C1289E100636DC4 /* DETECTOR.mlmodel */; };
+		F02225C52C128D2500636DC4 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225C42C128D2500636DC4 /* UIImage+Extension.swift */; };
+		F02225C82C129AC200636DC4 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225C72C129AC200636DC4 /* Triangle.swift */; };
+		F038A84A2C12308C00D4E1B0 /* BaseStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038A8492C12308C00D4E1B0 /* BaseStackView.swift */; };
+		F038A84E2C125DFC00D4E1B0 /* CoreML+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038A84D2C125DFC00D4E1B0 /* CoreML+Extension.swift */; };
 		F091EF7E2C10947400EB03EA /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F091EF7D2C10947400EB03EA /* BaseView.swift */; };
 		F091EF802C10947A00EB03EA /* BaseBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F091EF7F2C10947A00EB03EA /* BaseBodyView.swift */; };
-		F091EF822C1094A700EB03EA /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F091EF812C1094A700EB03EA /* Colors.xcassets */; };
-		F091EF842C1094AE00EB03EA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F091EF832C1094AE00EB03EA /* Images.xcassets */; };
 		F0A5862C2C0F9D0D00473198 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0A5862B2C0F9D0D00473198 /* Launch Screen.storyboard */; };
+		F0C4BEB82C12231A001A525F /* FCRN.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F0C4BEB72C12231A001A525F /* FCRN.mlmodel */; };
+		F0C4BEBE2C122518001A525F /* Colors.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C4BEBD2C122518001A525F /* Colors.xcassets */; };
+		F0C4BEC02C12253E001A525F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C4BEBF2C12253E001A525F /* Images.xcassets */; };
+		F0C4BEC32C122656001A525F /* Triangle+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4BEC22C122656001A525F /* Triangle+UI.swift */; };
+		F0C4BEC52C12265F001A525F /* TriangleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4BEC42C12265F001A525F /* TriangleScene.swift */; };
+		F0C4BEC72C12266B001A525F /* TriangleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4BEC62C12266B001A525F /* TriangleViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		AA5B23B62BBE9E98007F708F /* HayattaKal.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = HayattaKal.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA5B23B92BBE9E98007F708F /* HayattaKalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HayattaKalApp.swift; sourceTree = "<group>"; };
-		AA5B23BB2BBE9E98007F708F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		AA5B23BD2BBE9E99007F708F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA5B23C02BBE9E99007F708F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		F02225C22C1289E100636DC4 /* DETECTOR.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DETECTOR.mlmodel; sourceTree = "<group>"; };
+		F02225C42C128D2500636DC4 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
+		F02225C72C129AC200636DC4 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		F038A8492C12308C00D4E1B0 /* BaseStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStackView.swift; sourceTree = "<group>"; };
+		F038A84D2C125DFC00D4E1B0 /* CoreML+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreML+Extension.swift"; sourceTree = "<group>"; };
 		F091EF7D2C10947400EB03EA /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		F091EF7F2C10947A00EB03EA /* BaseBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBodyView.swift; sourceTree = "<group>"; };
-		F091EF812C1094A700EB03EA /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
-		F091EF832C1094AE00EB03EA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F0A5862B2C0F9D0D00473198 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
+		F0C4BEB72C12231A001A525F /* FCRN.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = FCRN.mlmodel; sourceTree = "<group>"; };
+		F0C4BEBD2C122518001A525F /* Colors.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Colors.xcassets; sourceTree = "<group>"; };
+		F0C4BEBF2C12253E001A525F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
+		F0C4BEC22C122656001A525F /* Triangle+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Triangle+UI.swift"; sourceTree = "<group>"; };
+		F0C4BEC42C12265F001A525F /* TriangleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleScene.swift; sourceTree = "<group>"; };
+		F0C4BEC62C12266B001A525F /* TriangleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,13 +79,11 @@
 			children = (
 				F0A586232C0F9CBD00473198 /* App */,
 				F0A586242C0F9CC000473198 /* Base */,
-				F0A586252C0F9CC500473198 /* Core */,
-				F0A586262C0F9CCB00473198 /* Models */,
+				F0C4BEB52C1222A1001A525F /* Models */,
 				AA5B23BF2BBE9E99007F708F /* Preview Content */,
-				F0A586272C0F9CD300473198 /* Product */,
 				F0A586282C0F9CD800473198 /* Resources */,
 				F0A586292C0F9CE600473198 /* Scenes */,
-				F0A5862A2C0F9CEE00473198 /* Utilities */,
+				F038A84B2C125DE200D4E1B0 /* Utilities */,
 			);
 			path = HayattaKal;
 			sourceTree = "<group>";
@@ -80,6 +94,31 @@
 				AA5B23C02BBE9E99007F708F /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		F02225C62C129ABD00636DC4 /* Scenes */ = {
+			isa = PBXGroup;
+			children = (
+				F02225C72C129AC200636DC4 /* Triangle.swift */,
+			);
+			path = Scenes;
+			sourceTree = "<group>";
+		};
+		F038A84B2C125DE200D4E1B0 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				F038A84C2C125DEC00D4E1B0 /* Extension */,
+			);
+			path = Utilities;
+			sourceTree = "<group>";
+		};
+		F038A84C2C125DEC00D4E1B0 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				F038A84D2C125DFC00D4E1B0 /* CoreML+Extension.swift */,
+				F02225C42C128D2500636DC4 /* UIImage+Extension.swift */,
+			);
+			path = Extension;
 			sourceTree = "<group>";
 		};
 		F0A586232C0F9CBD00473198 /* App */ = {
@@ -99,36 +138,12 @@
 			path = Base;
 			sourceTree = "<group>";
 		};
-		F0A586252C0F9CC500473198 /* Core */ = {
-			isa = PBXGroup;
-			children = (
-				F0A586322C0F9DE600473198 /* NetworkManager */,
-			);
-			path = Core;
-			sourceTree = "<group>";
-		};
-		F0A586262C0F9CCB00473198 /* Models */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Models;
-			sourceTree = "<group>";
-		};
-		F0A586272C0F9CD300473198 /* Product */ = {
-			isa = PBXGroup;
-			children = (
-				F0A586332C0F9E3D00473198 /* Components */,
-				F0A586342C0F9E4700473198 /* Modifiers */,
-			);
-			path = Product;
-			sourceTree = "<group>";
-		};
 		F0A586282C0F9CD800473198 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
 				AA5B23BD2BBE9E99007F708F /* Assets.xcassets */,
-				F091EF812C1094A700EB03EA /* Colors.xcassets */,
-				F091EF832C1094AE00EB03EA /* Images.xcassets */,
+				F0C4BEBD2C122518001A525F /* Colors.xcassets */,
+				F0C4BEBF2C12253E001A525F /* Images.xcassets */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -136,40 +151,9 @@
 		F0A586292C0F9CE600473198 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
-				AA5B23BB2BBE9E98007F708F /* ContentView.swift */,
+				F0C4BEC12C122612001A525F /* Triangle */,
 			);
 			path = Scenes;
-			sourceTree = "<group>";
-		};
-		F0A5862A2C0F9CEE00473198 /* Utilities */ = {
-			isa = PBXGroup;
-			children = (
-				F0A5862D2C0F9D4100473198 /* Constants */,
-				F0A5862E2C0F9D6400473198 /* Endpoint */,
-				F0A5862F2C0F9D6C00473198 /* Extension */,
-			);
-			path = Utilities;
-			sourceTree = "<group>";
-		};
-		F0A5862D2C0F9D4100473198 /* Constants */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Constants;
-			sourceTree = "<group>";
-		};
-		F0A5862E2C0F9D6400473198 /* Endpoint */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Endpoint;
-			sourceTree = "<group>";
-		};
-		F0A5862F2C0F9D6C00473198 /* Extension */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Extension;
 			sourceTree = "<group>";
 		};
 		F0A586312C0F9DE000473198 /* View */ = {
@@ -177,29 +161,37 @@
 			children = (
 				F091EF7F2C10947A00EB03EA /* BaseBodyView.swift */,
 				F091EF7D2C10947400EB03EA /* BaseView.swift */,
+				F038A8492C12308C00D4E1B0 /* BaseStackView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
 		};
-		F0A586322C0F9DE600473198 /* NetworkManager */ = {
+		F0C4BEB52C1222A1001A525F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F0C4BEB62C1222E3001A525F /* ML */,
+				F02225C62C129ABD00636DC4 /* Scenes */,
 			);
-			path = NetworkManager;
+			path = Models;
 			sourceTree = "<group>";
 		};
-		F0A586332C0F9E3D00473198 /* Components */ = {
+		F0C4BEB62C1222E3001A525F /* ML */ = {
 			isa = PBXGroup;
 			children = (
+				F0C4BEB72C12231A001A525F /* FCRN.mlmodel */,
+				F02225C22C1289E100636DC4 /* DETECTOR.mlmodel */,
 			);
-			path = Components;
+			path = ML;
 			sourceTree = "<group>";
 		};
-		F0A586342C0F9E4700473198 /* Modifiers */ = {
+		F0C4BEC12C122612001A525F /* Triangle */ = {
 			isa = PBXGroup;
 			children = (
+				F0C4BEC22C122656001A525F /* Triangle+UI.swift */,
+				F0C4BEC42C12265F001A525F /* TriangleScene.swift */,
+				F0C4BEC62C12266B001A525F /* TriangleViewModel.swift */,
 			);
-			path = Modifiers;
+			path = Triangle;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -260,9 +252,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F0C4BEBE2C122518001A525F /* Colors.xcassets in Resources */,
+				F0C4BEC02C12253E001A525F /* Images.xcassets in Resources */,
 				F0A5862C2C0F9D0D00473198 /* Launch Screen.storyboard in Resources */,
-				F091EF842C1094AE00EB03EA /* Images.xcassets in Resources */,
-				F091EF822C1094A700EB03EA /* Colors.xcassets in Resources */,
 				AA5B23C12BBE9E99007F708F /* Preview Assets.xcassets in Resources */,
 				AA5B23BE2BBE9E99007F708F /* Assets.xcassets in Resources */,
 			);
@@ -275,9 +267,17 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F038A84A2C12308C00D4E1B0 /* BaseStackView.swift in Sources */,
 				F091EF7E2C10947400EB03EA /* BaseView.swift in Sources */,
+				F0C4BEB82C12231A001A525F /* FCRN.mlmodel in Sources */,
+				F038A84E2C125DFC00D4E1B0 /* CoreML+Extension.swift in Sources */,
+				F0C4BEC52C12265F001A525F /* TriangleScene.swift in Sources */,
 				F091EF802C10947A00EB03EA /* BaseBodyView.swift in Sources */,
-				AA5B23BC2BBE9E98007F708F /* ContentView.swift in Sources */,
+				F02225C82C129AC200636DC4 /* Triangle.swift in Sources */,
+				F0C4BEC32C122656001A525F /* Triangle+UI.swift in Sources */,
+				F0C4BEC72C12266B001A525F /* TriangleViewModel.swift in Sources */,
+				F02225C32C1289E100636DC4 /* DETECTOR.mlmodel in Sources */,
+				F02225C52C128D2500636DC4 /* UIImage+Extension.swift in Sources */,
 				AA5B23BA2BBE9E98007F708F /* HayattaKalApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

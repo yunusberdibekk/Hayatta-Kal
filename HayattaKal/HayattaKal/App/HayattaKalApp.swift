@@ -11,7 +11,7 @@ import SwiftUI
 struct HayattaKalApp: App {
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            TriangleScene()
         }
     }
 }

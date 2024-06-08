@@ -7,29 +7,20 @@
 
 import Foundation
 
-struct DetectedNode: Identifiable, Hashable {
-    let id: String
-    let name: String
-    let alpha: Int
-    let confidence: String
-    let rectangle: CGRect
+final class DetectedNodeGraph {
+    static let shared: DetectedNodeGraph = .init()
 
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(self.name)
-        hasher.combine(self.alpha)
-        hasher.combine(self.confidence)
-    }
-}
-
-// MARK: - Change name.
-
-final class DetectedNodes {
     var nodes: [DetectedNode] = []
     var neighbors: [DetectedNode: [DetectedNode: Double]] = [:]
 
     init() {
-        let defaultNode: DetectedNode = .init(id: UUID().uuidString, name: "Camera", alpha: .zero, confidence: "", rectangle: .zero)
+        let defaultNode: DetectedNode = .init(type: .camera, alpha: .zero, predictedSafetyScore: .zero, rectangle: .zero)
+
         addNode(node: defaultNode)
+    }
+
+    var defaultNode: DetectedNode {
+        nodes[0]
     }
 
     func addNode(node: DetectedNode) {
@@ -42,9 +33,13 @@ final class DetectedNodes {
         neighbors[secondNode]?[firstNode] = cost
     }
 
-    // İki düğüm komşu mu? Yokso ilgili düğümün bir komşusu var mı ?
+    func addNeighborToCamera(node: DetectedNode, cost: Double) {
+        neighbors[defaultNode]?[node] = cost
+        neighbors[node]?[defaultNode] = cost
+    }
+
     func areNeighbors(firstNode: DetectedNode, secondNode: DetectedNode) -> Bool {
-        neighbors[firstNode]?[secondNode] == nil
+        neighbors[firstNode]?[secondNode] != 0.0
     }
 
     func getCost(firstNode: DetectedNode, secondNode: DetectedNode) -> Double? {
@@ -67,13 +62,35 @@ final class DetectedNodes {
 
     func readNeighborsMatrix() {
         let matrix = createNeighborsMatrix()
-        let row = "\t" + nodes.map { $0.name }.joined(separator: "\t")
+        let row = "\t" + nodes.map { $0.type.name }.joined(separator: "\t")
 
         print(row)
 
         for (j, node) in nodes.enumerated() {
-            let newRow = node.name + "\t" + matrix[j].map { String($0) }.joined(separator: "\t")
+            let newRow = node.type.name + "\t" + matrix[j].map { String($0) }.joined(separator: "\t")
             print(newRow)
         }
+    }
+}
+
+struct DetectedNode: Identifiable, Hashable {
+    let id: String
+    let type: NodeType
+    let alpha: Int
+    let predictedSafetyScore: CGFloat
+    let rectangle: CGRect
+
+    init(type: NodeType, alpha: Int, predictedSafetyScore: CGFloat, rectangle: CGRect) {
+        self.id = UUID().uuidString
+        self.type = type
+        self.alpha = alpha
+        self.predictedSafetyScore = predictedSafetyScore
+        self.rectangle = rectangle
+    }
+
+    func hash(into hasher: inout Hasher) {
+        hasher.combine(id)
+        hasher.combine(type)
+        hasher.combine(alpha)
     }
 }

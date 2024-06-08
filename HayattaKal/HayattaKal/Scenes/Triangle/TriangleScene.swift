@@ -19,47 +19,21 @@ struct TriangleScene: BaseView {
     }
 
     func onAppear() {
-        let graph = DetectedNodes()
-        let defaultNode = graph.nodes[0]
+        let firstNode = DetectedNode(type: .dolap,
+                                     alpha: 0,
+                                     predictedSafetyScore: Double.random(in: 0.1 ... 3.0),
+                                     rectangle: .zero)
+        let secondNode = DetectedNode(type: .masa,
+                                      alpha: 0,
+                                      predictedSafetyScore: Double.random(in: 0.1 ... 3.0),
+                                      rectangle: .zero)
 
-        let firstNode = DetectedNode(
-            id: UUID().uuidString,
-            name: "First",
-            alpha: 11,
-            confidence: UUID().uuidString,
-            rectangle: .null
-        )
-
-        let secondNode = DetectedNode(
-            id: UUID().uuidString,
-            name: "Second",
-            alpha: 22,
-            confidence: UUID().uuidString,
-            rectangle: .null
-        )
-
-        graph.addNode(node: firstNode)
-        graph.addNode(node: secondNode)
-
-        graph.addNeighbor(
-            firstNode: defaultNode,
-            secondNode: firstNode,
-            cost: 5.0
-        )
-
-        graph.addNeighbor(
-            firstNode: defaultNode,
-            secondNode: secondNode,
-            cost: 15.0
-        )
-
-        graph.addNeighbor(
-            firstNode: firstNode,
-            secondNode: secondNode,
-            cost: 10.0
-        )
-
-        graph.readNeighborsMatrix()
+        DetectedNodeGraph.shared.addNode(node: firstNode)
+        DetectedNodeGraph.shared.addNode(node: secondNode)
+        DetectedNodeGraph.shared.addNeighbor(firstNode: firstNode, secondNode: secondNode, cost: 10)
+        DetectedNodeGraph.shared.addNeighborToCamera(node: firstNode, cost: 25)
+        DetectedNodeGraph.shared.addNeighborToCamera(node: secondNode, cost: 15)
+        DetectedNodeGraph.shared.readNeighborsMatrix()
     }
 }
 

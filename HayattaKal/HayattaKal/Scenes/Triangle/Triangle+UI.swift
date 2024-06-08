@@ -22,8 +22,14 @@ extension TriangleScene {
                             .aspectRatio(contentMode: .fit)
                     }
 
-                    if let detectorImage = viewModel.detectorImage {
-                        detectorImage
+                    if let objectDetectorImage = viewModel.objectDetectorImage {
+                        objectDetectorImage
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }
+
+                    if let depthDetectorImage = viewModel.depthDetectorImage {
+                        depthDetectorImage
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                     }

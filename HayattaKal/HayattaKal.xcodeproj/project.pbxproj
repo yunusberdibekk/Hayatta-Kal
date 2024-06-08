@@ -13,8 +13,9 @@
 		F02225C32C1289E100636DC4 /* DETECTOR.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F02225C22C1289E100636DC4 /* DETECTOR.mlmodel */; };
 		F02225C52C128D2500636DC4 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225C42C128D2500636DC4 /* UIImage+Extension.swift */; };
 		F02225C82C129AC200636DC4 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225C72C129AC200636DC4 /* Triangle.swift */; };
+		F02225CF2C15093A00636DC4 /* NodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225CE2C15093A00636DC4 /* NodeType.swift */; };
 		F038A84A2C12308C00D4E1B0 /* BaseStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038A8492C12308C00D4E1B0 /* BaseStackView.swift */; };
-		F038A84E2C125DFC00D4E1B0 /* CoreML+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038A84D2C125DFC00D4E1B0 /* CoreML+Extension.swift */; };
+		F038A84E2C125DFC00D4E1B0 /* MLMultiArray+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038A84D2C125DFC00D4E1B0 /* MLMultiArray+Extension.swift */; };
 		F091EF7E2C10947400EB03EA /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F091EF7D2C10947400EB03EA /* BaseView.swift */; };
 		F091EF802C10947A00EB03EA /* BaseBodyView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F091EF7F2C10947A00EB03EA /* BaseBodyView.swift */; };
 		F0A5862C2C0F9D0D00473198 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = F0A5862B2C0F9D0D00473198 /* Launch Screen.storyboard */; };
@@ -34,8 +35,9 @@
 		F02225C22C1289E100636DC4 /* DETECTOR.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DETECTOR.mlmodel; sourceTree = "<group>"; };
 		F02225C42C128D2500636DC4 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		F02225C72C129AC200636DC4 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		F02225CE2C15093A00636DC4 /* NodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeType.swift; sourceTree = "<group>"; };
 		F038A8492C12308C00D4E1B0 /* BaseStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStackView.swift; sourceTree = "<group>"; };
-		F038A84D2C125DFC00D4E1B0 /* CoreML+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "CoreML+Extension.swift"; sourceTree = "<group>"; };
+		F038A84D2C125DFC00D4E1B0 /* MLMultiArray+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MLMultiArray+Extension.swift"; sourceTree = "<group>"; };
 		F091EF7D2C10947400EB03EA /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
 		F091EF7F2C10947A00EB03EA /* BaseBodyView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseBodyView.swift; sourceTree = "<group>"; };
 		F0A5862B2C0F9D0D00473198 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
@@ -104,9 +106,18 @@
 			path = Scenes;
 			sourceTree = "<group>";
 		};
+		F02225CD2C15093400636DC4 /* Enum */ = {
+			isa = PBXGroup;
+			children = (
+				F02225CE2C15093A00636DC4 /* NodeType.swift */,
+			);
+			path = Enum;
+			sourceTree = "<group>";
+		};
 		F038A84B2C125DE200D4E1B0 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F02225CD2C15093400636DC4 /* Enum */,
 				F038A84C2C125DEC00D4E1B0 /* Extension */,
 			);
 			path = Utilities;
@@ -115,7 +126,7 @@
 		F038A84C2C125DEC00D4E1B0 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
-				F038A84D2C125DFC00D4E1B0 /* CoreML+Extension.swift */,
+				F038A84D2C125DFC00D4E1B0 /* MLMultiArray+Extension.swift */,
 				F02225C42C128D2500636DC4 /* UIImage+Extension.swift */,
 			);
 			path = Extension;
@@ -268,9 +279,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				F038A84A2C12308C00D4E1B0 /* BaseStackView.swift in Sources */,
+				F02225CF2C15093A00636DC4 /* NodeType.swift in Sources */,
 				F091EF7E2C10947400EB03EA /* BaseView.swift in Sources */,
 				F0C4BEB82C12231A001A525F /* FCRN.mlmodel in Sources */,
-				F038A84E2C125DFC00D4E1B0 /* CoreML+Extension.swift in Sources */,
+				F038A84E2C125DFC00D4E1B0 /* MLMultiArray+Extension.swift in Sources */,
 				F0C4BEC52C12265F001A525F /* TriangleScene.swift in Sources */,
 				F091EF802C10947A00EB03EA /* BaseBodyView.swift in Sources */,
 				F02225C82C129AC200636DC4 /* Triangle.swift in Sources */,

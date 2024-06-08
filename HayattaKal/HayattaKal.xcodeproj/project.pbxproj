@@ -14,6 +14,19 @@
 		F02225C52C128D2500636DC4 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225C42C128D2500636DC4 /* UIImage+Extension.swift */; };
 		F02225C82C129AC200636DC4 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225C72C129AC200636DC4 /* Triangle.swift */; };
 		F02225CF2C15093A00636DC4 /* NodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225CE2C15093A00636DC4 /* NodeType.swift */; };
+		F02225D22C150F5D00636DC4 /* LoginScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225D12C150F5D00636DC4 /* LoginScene.swift */; };
+		F02225D42C150F6A00636DC4 /* Login+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225D32C150F6A00636DC4 /* Login+UI.swift */; };
+		F02225D62C150F7300636DC4 /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225D52C150F7300636DC4 /* LoginViewModel.swift */; };
+		F02225D82C15101F00636DC4 /* Login.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225D72C15101F00636DC4 /* Login.swift */; };
+		F02225DA2C15102400636DC4 /* Register.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225D92C15102400636DC4 /* Register.swift */; };
+		F02225DD2C1516DB00636DC4 /* Register+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225DC2C1516DB00636DC4 /* Register+UI.swift */; };
+		F02225DF2C1516E200636DC4 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225DE2C1516E200636DC4 /* RegisterViewModel.swift */; };
+		F02225E12C1516E700636DC4 /* RegisterScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225E02C1516E700636DC4 /* RegisterScene.swift */; };
+		F02225E32C15184900636DC4 /* BaseNavigationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225E22C15184900636DC4 /* BaseNavigationView.swift */; };
+		F02225E82C151A3300636DC4 /* AuthFormField.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225E72C151A3300636DC4 /* AuthFormField.swift */; };
+		F02225EB2C151A4B00636DC4 /* SFSymbol.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225EA2C151A4B00636DC4 /* SFSymbol.swift */; };
+		F02225ED2C151A7C00636DC4 /* View+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225EC2C151A7C00636DC4 /* View+Extension.swift */; };
+		F02225EF2C151AA500636DC4 /* AuthButtonModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225EE2C151AA500636DC4 /* AuthButtonModifier.swift */; };
 		F038A84A2C12308C00D4E1B0 /* BaseStackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038A8492C12308C00D4E1B0 /* BaseStackView.swift */; };
 		F038A84E2C125DFC00D4E1B0 /* MLMultiArray+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F038A84D2C125DFC00D4E1B0 /* MLMultiArray+Extension.swift */; };
 		F091EF7E2C10947400EB03EA /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F091EF7D2C10947400EB03EA /* BaseView.swift */; };
@@ -36,6 +49,19 @@
 		F02225C42C128D2500636DC4 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		F02225C72C129AC200636DC4 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		F02225CE2C15093A00636DC4 /* NodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeType.swift; sourceTree = "<group>"; };
+		F02225D12C150F5D00636DC4 /* LoginScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScene.swift; sourceTree = "<group>"; };
+		F02225D32C150F6A00636DC4 /* Login+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login+UI.swift"; sourceTree = "<group>"; };
+		F02225D52C150F7300636DC4 /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
+		F02225D72C15101F00636DC4 /* Login.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Login.swift; sourceTree = "<group>"; };
+		F02225D92C15102400636DC4 /* Register.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Register.swift; sourceTree = "<group>"; };
+		F02225DC2C1516DB00636DC4 /* Register+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Register+UI.swift"; sourceTree = "<group>"; };
+		F02225DE2C1516E200636DC4 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		F02225E02C1516E700636DC4 /* RegisterScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterScene.swift; sourceTree = "<group>"; };
+		F02225E22C15184900636DC4 /* BaseNavigationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseNavigationView.swift; sourceTree = "<group>"; };
+		F02225E72C151A3300636DC4 /* AuthFormField.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthFormField.swift; sourceTree = "<group>"; };
+		F02225EA2C151A4B00636DC4 /* SFSymbol.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SFSymbol.swift; sourceTree = "<group>"; };
+		F02225EC2C151A7C00636DC4 /* View+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "View+Extension.swift"; sourceTree = "<group>"; };
+		F02225EE2C151AA500636DC4 /* AuthButtonModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthButtonModifier.swift; sourceTree = "<group>"; };
 		F038A8492C12308C00D4E1B0 /* BaseStackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseStackView.swift; sourceTree = "<group>"; };
 		F038A84D2C125DFC00D4E1B0 /* MLMultiArray+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MLMultiArray+Extension.swift"; sourceTree = "<group>"; };
 		F091EF7D2C10947400EB03EA /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
@@ -83,6 +109,7 @@
 				F0A586242C0F9CC000473198 /* Base */,
 				F0C4BEB52C1222A1001A525F /* Models */,
 				AA5B23BF2BBE9E99007F708F /* Preview Content */,
+				F02225E42C151A0A00636DC4 /* Product */,
 				F0A586282C0F9CD800473198 /* Resources */,
 				F0A586292C0F9CE600473198 /* Scenes */,
 				F038A84B2C125DE200D4E1B0 /* Utilities */,
@@ -101,6 +128,8 @@
 		F02225C62C129ABD00636DC4 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F02225D72C15101F00636DC4 /* Login.swift */,
+				F02225D92C15102400636DC4 /* Register.swift */,
 				F02225C72C129AC200636DC4 /* Triangle.swift */,
 			);
 			path = Scenes;
@@ -114,9 +143,63 @@
 			path = Enum;
 			sourceTree = "<group>";
 		};
+		F02225D02C150F2700636DC4 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				F02225D32C150F6A00636DC4 /* Login+UI.swift */,
+				F02225D12C150F5D00636DC4 /* LoginScene.swift */,
+				F02225D52C150F7300636DC4 /* LoginViewModel.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		F02225DB2C1516BA00636DC4 /* Register */ = {
+			isa = PBXGroup;
+			children = (
+				F02225DC2C1516DB00636DC4 /* Register+UI.swift */,
+				F02225E02C1516E700636DC4 /* RegisterScene.swift */,
+				F02225DE2C1516E200636DC4 /* RegisterViewModel.swift */,
+			);
+			path = Register;
+			sourceTree = "<group>";
+		};
+		F02225E42C151A0A00636DC4 /* Product */ = {
+			isa = PBXGroup;
+			children = (
+				F02225E52C151A1700636DC4 /* Components */,
+				F02225E62C151A1B00636DC4 /* Modifier */,
+			);
+			path = Product;
+			sourceTree = "<group>";
+		};
+		F02225E52C151A1700636DC4 /* Components */ = {
+			isa = PBXGroup;
+			children = (
+				F02225E72C151A3300636DC4 /* AuthFormField.swift */,
+			);
+			path = Components;
+			sourceTree = "<group>";
+		};
+		F02225E62C151A1B00636DC4 /* Modifier */ = {
+			isa = PBXGroup;
+			children = (
+				F02225EE2C151AA500636DC4 /* AuthButtonModifier.swift */,
+			);
+			path = Modifier;
+			sourceTree = "<group>";
+		};
+		F02225E92C151A4400636DC4 /* Constant */ = {
+			isa = PBXGroup;
+			children = (
+				F02225EA2C151A4B00636DC4 /* SFSymbol.swift */,
+			);
+			path = Constant;
+			sourceTree = "<group>";
+		};
 		F038A84B2C125DE200D4E1B0 /* Utilities */ = {
 			isa = PBXGroup;
 			children = (
+				F02225E92C151A4400636DC4 /* Constant */,
 				F02225CD2C15093400636DC4 /* Enum */,
 				F038A84C2C125DEC00D4E1B0 /* Extension */,
 			);
@@ -128,6 +211,7 @@
 			children = (
 				F038A84D2C125DFC00D4E1B0 /* MLMultiArray+Extension.swift */,
 				F02225C42C128D2500636DC4 /* UIImage+Extension.swift */,
+				F02225EC2C151A7C00636DC4 /* View+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -162,6 +246,8 @@
 		F0A586292C0F9CE600473198 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F02225D02C150F2700636DC4 /* Login */,
+				F02225DB2C1516BA00636DC4 /* Register */,
 				F0C4BEC12C122612001A525F /* Triangle */,
 			);
 			path = Scenes;
@@ -173,6 +259,7 @@
 				F091EF7F2C10947A00EB03EA /* BaseBodyView.swift */,
 				F091EF7D2C10947400EB03EA /* BaseView.swift */,
 				F038A8492C12308C00D4E1B0 /* BaseStackView.swift */,
+				F02225E22C15184900636DC4 /* BaseNavigationView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -189,8 +276,8 @@
 		F0C4BEB62C1222E3001A525F /* ML */ = {
 			isa = PBXGroup;
 			children = (
-				F0C4BEB72C12231A001A525F /* FCRN.mlmodel */,
 				F02225C22C1289E100636DC4 /* DETECTOR.mlmodel */,
+				F0C4BEB72C12231A001A525F /* FCRN.mlmodel */,
 			);
 			path = ML;
 			sourceTree = "<group>";
@@ -279,16 +366,29 @@
 			buildActionMask = 2147483647;
 			files = (
 				F038A84A2C12308C00D4E1B0 /* BaseStackView.swift in Sources */,
+				F02225E32C15184900636DC4 /* BaseNavigationView.swift in Sources */,
+				F02225D82C15101F00636DC4 /* Login.swift in Sources */,
 				F02225CF2C15093A00636DC4 /* NodeType.swift in Sources */,
 				F091EF7E2C10947400EB03EA /* BaseView.swift in Sources */,
 				F0C4BEB82C12231A001A525F /* FCRN.mlmodel in Sources */,
+				F02225D62C150F7300636DC4 /* LoginViewModel.swift in Sources */,
+				F02225ED2C151A7C00636DC4 /* View+Extension.swift in Sources */,
 				F038A84E2C125DFC00D4E1B0 /* MLMultiArray+Extension.swift in Sources */,
+				F02225EB2C151A4B00636DC4 /* SFSymbol.swift in Sources */,
+				F02225DD2C1516DB00636DC4 /* Register+UI.swift in Sources */,
 				F0C4BEC52C12265F001A525F /* TriangleScene.swift in Sources */,
+				F02225D22C150F5D00636DC4 /* LoginScene.swift in Sources */,
 				F091EF802C10947A00EB03EA /* BaseBodyView.swift in Sources */,
+				F02225EF2C151AA500636DC4 /* AuthButtonModifier.swift in Sources */,
+				F02225E12C1516E700636DC4 /* RegisterScene.swift in Sources */,
+				F02225DF2C1516E200636DC4 /* RegisterViewModel.swift in Sources */,
 				F02225C82C129AC200636DC4 /* Triangle.swift in Sources */,
+				F02225E82C151A3300636DC4 /* AuthFormField.swift in Sources */,
 				F0C4BEC32C122656001A525F /* Triangle+UI.swift in Sources */,
+				F02225DA2C15102400636DC4 /* Register.swift in Sources */,
 				F0C4BEC72C12266B001A525F /* TriangleViewModel.swift in Sources */,
 				F02225C32C1289E100636DC4 /* DETECTOR.mlmodel in Sources */,
+				F02225D42C150F6A00636DC4 /* Login+UI.swift in Sources */,
 				F02225C52C128D2500636DC4 /* UIImage+Extension.swift in Sources */,
 				AA5B23BA2BBE9E98007F708F /* HayattaKalApp.swift in Sources */,
 			);

@@ -11,7 +11,10 @@ final class RegisterViewModel: ObservableObject {
     @Published var registerModel: RegisterModel = .empty
 
     var isValid: Bool {
-        !(registerModel.username.isEmpty || registerModel.email.isEmpty || registerModel.password.isEmpty)
+        !(registerModel.name.isEmpty ||
+          registerModel.surname.isEmpty ||
+          registerModel.email.isEmpty ||
+          registerModel.password.isEmpty)
     }
 
     func register() {

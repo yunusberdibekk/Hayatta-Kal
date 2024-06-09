@@ -29,6 +29,10 @@ struct AuthFormField: View {
             }
         }
         .font(.subheadline)
+        .authTextFieldModifier(foregroundColor: .darkLiver,
+                            backgroundColor: .gray.opacity(0.1),
+                            size:CGSize(width: 300, height: 60),
+                            radius: 100)
     }
 }
 

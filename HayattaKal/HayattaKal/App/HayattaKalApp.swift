@@ -9,9 +9,15 @@ import SwiftUI
 
 @main
 struct HayattaKalApp: App {
+    @AppStorage("showLogin") var showLogin:Bool = true
+
     var body: some Scene {
         WindowGroup {
-            LoginScene()
+            if showLogin {
+                AuthScene()
+            } else {
+                Text("Logged")
+            }
         }
     }
 }

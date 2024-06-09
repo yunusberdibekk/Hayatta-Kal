@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RegisterScene: BaseView {
     @StateObject var viewModel: RegisterViewModel = .init()
+    @Environment(\.presentationMode) var presentationMode
     @FocusState var registerField: RegisterModel.RegisterEndpointField?
 
     var body: some View {

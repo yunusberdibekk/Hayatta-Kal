@@ -19,22 +19,24 @@ struct TriangleScene: BaseView {
     }
 
     func onAppear() {
+        let masa = DetectedNode(type: .masa, alpha: 0, predictedSafetyScore: 0, rectangle: CGRect(x: 0, y: 0, width: 50, height: 100))
+        let yatak = DetectedNode(type: .yatak, alpha: 0, predictedSafetyScore: 0, rectangle: CGRect(x: 100, y: 0, width: 200, height: 200))
+        let koltuk = DetectedNode(type: .koltuk, alpha: 0, predictedSafetyScore: 0, rectangle: CGRect(x: 350, y: 0, width: 200, height: 100))
+        let detectedObjects = [masa, yatak, koltuk]
+
+        // Graph oluşturma ve tespit edilen nesneleri ekleme
         let graph = DetectedNodeGraph()
-        let firstNode = DetectedNode(type: .dolap,
-                                     alpha: 0,
-                                     predictedSafetyScore: Double.random(in: 0.1 ... 3.0),
-                                     rectangle: .zero)
-        let secondNode = DetectedNode(type: .masa,
-                                      alpha: 0,
-                                      predictedSafetyScore: Double.random(in: 0.1 ... 3.0),
-                                      rectangle: .zero)
         let defaultNode = graph.nodes[0]
 
-        graph.addNode(node: firstNode)
-        graph.addNeighbor(firstNode: defaultNode, secondNode: firstNode, cost: 100)
-        graph.addNode(node: secondNode)
-        graph.addNeighbor(firstNode: defaultNode, secondNode: secondNode, cost: 200)
-        graph.addNeighbor(firstNode: firstNode, secondNode: secondNode, cost: 300)
+        for object in detectedObjects {
+            graph.addNode(node: object)
+            graph.addNeighbor(firstNode: defaultNode, secondNode: object, cost: Double.random(in: 0 ... 1000))
+        }
+
+        // Komşuluk ilişkiler ini belirleme
+        graph.addNeighborsAccordingToConditions()
+
+        // Komşuluk matrisini okuma ve gösterme
         graph.readNeighborsMatrix()
     }
 }

@@ -52,12 +52,65 @@ final class DetectedNodeGraph {
         let matrix = createNeighborsMatrix()
         let row = "\t" + nodes.map { $0.type.name }.joined(separator: "\t")
         
-        print(row)
+        print(row + " ")
         
         for (j, node) in nodes.enumerated() {
             let newRow = node.type.name + "\t" + matrix[j].map { String($0) }.joined(separator: "\t")
             print(newRow)
         }
+    }
+    
+    func addNeighborsAccordingToConditions() {
+        for (index, currentNode) in nodes.enumerated() {
+            if currentNode.type == .camera {
+                continue
+            }
+            
+            if (index + 1) < nodes.count {
+                let nextNode = nodes[index + 1]
+                
+                if currentNode.type != .camera {
+                    addNeighbor(firstNode: currentNode,
+                                secondNode: nextNode,
+                                cost: calculateCost(from: currentNode.rectangle,
+                                                    to: nextNode.rectangle))
+                }
+            }
+
+            for j in (index + 1) ..< nodes.count {
+                let potentialNeighbor = nodes[j]
+                var canBeNeighbor = true
+                
+                if potentialNeighbor.type == .camera {
+                    continue
+                }
+
+                for k in (index + 1) ..< j {
+                    let intermediateNode = nodes[k]
+                    
+                    if intermediateNode.rectangle.height >= potentialNeighbor.rectangle.height {
+                        canBeNeighbor = false
+                        break
+                    }
+                }
+
+                if canBeNeighbor {
+                    addNeighbor(firstNode: currentNode,
+                                secondNode: potentialNeighbor,
+                                cost: calculateCost(from: currentNode.rectangle,
+                                                    to: potentialNeighbor.rectangle))
+                }
+            }
+        }
+    }
+    
+    func calculateCost(from rect1: CGRect, to rect2: CGRect) -> Double {
+        let center1 = CGPoint(x: rect1.midX, y: rect1.midY)
+        let center2 = CGPoint(x: rect2.midX, y: rect2.midY)
+        let dx = center2.x - center1.x
+        let dy = center2.y - center1.y
+        
+        return Double(sqrt(dx * dx + dy * dy))
     }
 }
 

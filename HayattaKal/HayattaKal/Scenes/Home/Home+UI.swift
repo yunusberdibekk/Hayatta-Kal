@@ -15,7 +15,9 @@ extension HomeScene {
             self.cardsView
         }
         .navigationTitle("Hayatta Kal")
-//        .onReceive(viewModel.$selectedGame, perform: viewModel.updateGameState)
+        .sheet(item: $viewModel.selectedHomeDetailModel) { model in
+            HomeDetailScene(homeDetailModel: model)
+        }
     }
 
     var navigationView: some View {
@@ -32,17 +34,17 @@ extension HomeScene {
                 self.columnView(items: Home.allCases.splitByOdd().even)
                 self.columnView(items: Home.allCases.splitByOdd().odd)
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 32)
         }
         .clipped()
+        .padding(.horizontal, 16)
+        .padding(.top, 32)
     }
 
     func columnView(items: [Home]) -> some View {
         VStack {
             ForEach(items, id: \.rawValue) { item in
                 Button {
-//                    viewModel.selectedGame = (game: game, bookmarks: nil)
+                    viewModel.selectedHomeDetailModel = item.currentModel
                 } label: {
                     self.homeCardView(home: item)
                         .multilineTextAlignment(.leading)
@@ -62,7 +64,7 @@ extension HomeScene {
                     .font(.subheadline)
                     .foregroundColor(.gray4)
 
-                Text(home.description)
+                Text(home.headline)
                     .font(.caption)
                     .foregroundColor(.gray3)
                     .lineLimit(5)

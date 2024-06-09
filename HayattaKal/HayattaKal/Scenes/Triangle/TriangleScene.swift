@@ -17,8 +17,9 @@ struct TriangleScene: BaseView {
         }
         .onAppear(perform: onAppear)
     }
-
+    
     func onAppear() {
+        let graph = DetectedNodeGraph()
         let firstNode = DetectedNode(type: .dolap,
                                      alpha: 0,
                                      predictedSafetyScore: Double.random(in: 0.1 ... 3.0),
@@ -27,13 +28,14 @@ struct TriangleScene: BaseView {
                                       alpha: 0,
                                       predictedSafetyScore: Double.random(in: 0.1 ... 3.0),
                                       rectangle: .zero)
-
-        DetectedNodeGraph.shared.addNode(node: firstNode)
-        DetectedNodeGraph.shared.addNode(node: secondNode)
-        DetectedNodeGraph.shared.addNeighbor(firstNode: firstNode, secondNode: secondNode, cost: 10)
-        DetectedNodeGraph.shared.addNeighborToCamera(node: firstNode, cost: 25)
-        DetectedNodeGraph.shared.addNeighborToCamera(node: secondNode, cost: 15)
-        DetectedNodeGraph.shared.readNeighborsMatrix()
+        let defaultNode = graph.nodes[0]
+        
+        graph.addNode(node: firstNode)
+        graph.addNeighbor(firstNode: defaultNode, secondNode: firstNode, cost: 100)
+        graph.addNode(node: secondNode)
+        graph.addNeighbor(firstNode: defaultNode, secondNode: secondNode, cost: 200)
+        graph.addNeighbor(firstNode: firstNode, secondNode: secondNode, cost: 300)
+        graph.readNeighborsMatrix()
     }
 }
 

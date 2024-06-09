@@ -11,4 +11,7 @@ enum SFSymbol: String {
     case personFill = "person.fill"
     case lockFill = "lock.fill"
     case envelopeFill = "envelope.fill"
+    case house
+    case camera
+    case gear
 }

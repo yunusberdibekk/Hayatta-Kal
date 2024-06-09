@@ -16,7 +16,7 @@ struct HayattaKalApp: App {
             if showLogin {
                 AuthScene()
             } else {
-                Text("Logged")
+                TabScene()
             }
         }
     }

@@ -17,6 +17,10 @@
 		F0210D372C15FD6900D0557E /* OnboardingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D362C15FD6900D0557E /* OnboardingScene.swift */; };
 		F0210D392C15FD7300D0557E /* OnboardingViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D382C15FD7300D0557E /* OnboardingViewModel.swift */; };
 		F0210D3C2C16046E00D0557E /* AuthScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D3B2C16046E00D0557E /* AuthScene.swift */; };
+		F0210D3F2C1606ED00D0557E /* TabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D3E2C1606ED00D0557E /* TabViewModel.swift */; };
+		F0210D412C1606F100D0557E /* TabScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D402C1606F100D0557E /* TabScene.swift */; };
+		F0210D432C1606F700D0557E /* Tab+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D422C1606F700D0557E /* Tab+UI.swift */; };
+		F0210D462C1607B400D0557E /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D452C1607B400D0557E /* Tab.swift */; };
 		F02225C52C128D2500636DC4 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225C42C128D2500636DC4 /* UIImage+Extension.swift */; };
 		F02225C82C129AC200636DC4 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225C72C129AC200636DC4 /* Triangle.swift */; };
 		F02225CF2C15093A00636DC4 /* NodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225CE2C15093A00636DC4 /* NodeType.swift */; };
@@ -57,6 +61,10 @@
 		F0210D362C15FD6900D0557E /* OnboardingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScene.swift; sourceTree = "<group>"; };
 		F0210D382C15FD7300D0557E /* OnboardingViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewModel.swift; sourceTree = "<group>"; };
 		F0210D3B2C16046E00D0557E /* AuthScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthScene.swift; sourceTree = "<group>"; };
+		F0210D3E2C1606ED00D0557E /* TabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabViewModel.swift; sourceTree = "<group>"; };
+		F0210D402C1606F100D0557E /* TabScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabScene.swift; sourceTree = "<group>"; };
+		F0210D422C1606F700D0557E /* Tab+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tab+UI.swift"; sourceTree = "<group>"; };
+		F0210D452C1607B400D0557E /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
 		F02225C42C128D2500636DC4 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		F02225C72C129AC200636DC4 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		F02225CE2C15093A00636DC4 /* NodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeType.swift; sourceTree = "<group>"; };
@@ -162,12 +170,23 @@
 			path = Auth;
 			sourceTree = "<group>";
 		};
+		F0210D3D2C1606B300D0557E /* Tab */ = {
+			isa = PBXGroup;
+			children = (
+				F0210D422C1606F700D0557E /* Tab+UI.swift */,
+				F0210D402C1606F100D0557E /* TabScene.swift */,
+				F0210D3E2C1606ED00D0557E /* TabViewModel.swift */,
+			);
+			path = Tab;
+			sourceTree = "<group>";
+		};
 		F02225C62C129ABD00636DC4 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
 				F02225D72C15101F00636DC4 /* Login.swift */,
 				F0210D322C15FD3E00D0557E /* Onboarding.swift */,
 				F02225D92C15102400636DC4 /* Register.swift */,
+				F0210D452C1607B400D0557E /* Tab.swift */,
 				F02225C72C129AC200636DC4 /* Triangle.swift */,
 			);
 			path = Scenes;
@@ -288,6 +307,7 @@
 				F02225D02C150F2700636DC4 /* Login */,
 				F0210D312C15FC7B00D0557E /* Onboarding */,
 				F02225DB2C1516BA00636DC4 /* Register */,
+				F0210D3D2C1606B300D0557E /* Tab */,
 				F0C4BEC12C122612001A525F /* Triangle */,
 			);
 			path = Scenes;
@@ -398,6 +418,7 @@
 			files = (
 				F0210D332C15FD3E00D0557E /* Onboarding.swift in Sources */,
 				F038A84A2C12308C00D4E1B0 /* BaseStackView.swift in Sources */,
+				F0210D412C1606F100D0557E /* TabScene.swift in Sources */,
 				F02225E32C15184900636DC4 /* BaseNavigationView.swift in Sources */,
 				F02225D82C15101F00636DC4 /* Login.swift in Sources */,
 				F02225CF2C15093A00636DC4 /* NodeType.swift in Sources */,
@@ -412,6 +433,7 @@
 				F02225D22C150F5D00636DC4 /* LoginScene.swift in Sources */,
 				F091EF802C10947A00EB03EA /* BaseBodyView.swift in Sources */,
 				F0210D2E2C153A2F00D0557E /* DETECTOR.mlmodel in Sources */,
+				F0210D3F2C1606ED00D0557E /* TabViewModel.swift in Sources */,
 				F02225EF2C151AA500636DC4 /* Auth.swift in Sources */,
 				F02225E12C1516E700636DC4 /* RegisterScene.swift in Sources */,
 				F02225DF2C1516E200636DC4 /* RegisterViewModel.swift in Sources */,
@@ -421,12 +443,14 @@
 				F02225DA2C15102400636DC4 /* Register.swift in Sources */,
 				F0210D352C15FD6200D0557E /* Onboarding+UI.swift in Sources */,
 				F0210D302C153A7D00D0557E /* FCRN.mlmodel in Sources */,
+				F0210D462C1607B400D0557E /* Tab.swift in Sources */,
 				F0C4BEC72C12266B001A525F /* TriangleViewModel.swift in Sources */,
 				F0210D392C15FD7300D0557E /* OnboardingViewModel.swift in Sources */,
 				F02225D42C150F6A00636DC4 /* Login+UI.swift in Sources */,
 				F02225C52C128D2500636DC4 /* UIImage+Extension.swift in Sources */,
 				F0210D372C15FD6900D0557E /* OnboardingScene.swift in Sources */,
 				AA5B23BA2BBE9E98007F708F /* HayattaKalApp.swift in Sources */,
+				F0210D432C1606F700D0557E /* Tab+UI.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

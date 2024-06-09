@@ -21,6 +21,11 @@
 		F0210D412C1606F100D0557E /* TabScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D402C1606F100D0557E /* TabScene.swift */; };
 		F0210D432C1606F700D0557E /* Tab+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D422C1606F700D0557E /* Tab+UI.swift */; };
 		F0210D462C1607B400D0557E /* Tab.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D452C1607B400D0557E /* Tab.swift */; };
+		F0210D492C160EFA00D0557E /* Home.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D482C160EFA00D0557E /* Home.swift */; };
+		F0210D4B2C161D4100D0557E /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D4A2C161D4100D0557E /* HomeScene.swift */; };
+		F0210D4D2C161D4800D0557E /* Home+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D4C2C161D4800D0557E /* Home+UI.swift */; };
+		F0210D4F2C161D5400D0557E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D4E2C161D5400D0557E /* HomeViewModel.swift */; };
+		F0210D512C16222000D0557E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D502C16222000D0557E /* NavigationBarView.swift */; };
 		F02225C52C128D2500636DC4 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225C42C128D2500636DC4 /* UIImage+Extension.swift */; };
 		F02225C82C129AC200636DC4 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225C72C129AC200636DC4 /* Triangle.swift */; };
 		F02225CF2C15093A00636DC4 /* NodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225CE2C15093A00636DC4 /* NodeType.swift */; };
@@ -65,6 +70,11 @@
 		F0210D402C1606F100D0557E /* TabScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabScene.swift; sourceTree = "<group>"; };
 		F0210D422C1606F700D0557E /* Tab+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Tab+UI.swift"; sourceTree = "<group>"; };
 		F0210D452C1607B400D0557E /* Tab.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tab.swift; sourceTree = "<group>"; };
+		F0210D482C160EFA00D0557E /* Home.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Home.swift; sourceTree = "<group>"; };
+		F0210D4A2C161D4100D0557E /* HomeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
+		F0210D4C2C161D4800D0557E /* Home+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+UI.swift"; sourceTree = "<group>"; };
+		F0210D4E2C161D5400D0557E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
+		F0210D502C16222000D0557E /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		F02225C42C128D2500636DC4 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 		F02225C72C129AC200636DC4 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		F02225CE2C15093A00636DC4 /* NodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeType.swift; sourceTree = "<group>"; };
@@ -180,9 +190,20 @@
 			path = Tab;
 			sourceTree = "<group>";
 		};
+		F0210D472C160EE100D0557E /* Home */ = {
+			isa = PBXGroup;
+			children = (
+				F0210D4C2C161D4800D0557E /* Home+UI.swift */,
+				F0210D4A2C161D4100D0557E /* HomeScene.swift */,
+				F0210D4E2C161D5400D0557E /* HomeViewModel.swift */,
+			);
+			path = Home;
+			sourceTree = "<group>";
+		};
 		F02225C62C129ABD00636DC4 /* Scenes */ = {
 			isa = PBXGroup;
 			children = (
+				F0210D482C160EFA00D0557E /* Home.swift */,
 				F02225D72C15101F00636DC4 /* Login.swift */,
 				F0210D322C15FD3E00D0557E /* Onboarding.swift */,
 				F02225D92C15102400636DC4 /* Register.swift */,
@@ -232,6 +253,7 @@
 		F02225E52C151A1700636DC4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				F0210D502C16222000D0557E /* NavigationBarView.swift */,
 				F02225E72C151A3300636DC4 /* AuthFormField.swift */,
 			);
 			path = Components;
@@ -304,6 +326,7 @@
 			isa = PBXGroup;
 			children = (
 				F0210D3A2C16046400D0557E /* Auth */,
+				F0210D472C160EE100D0557E /* Home */,
 				F02225D02C150F2700636DC4 /* Login */,
 				F0210D312C15FC7B00D0557E /* Onboarding */,
 				F02225DB2C1516BA00636DC4 /* Register */,
@@ -421,6 +444,8 @@
 				F0210D412C1606F100D0557E /* TabScene.swift in Sources */,
 				F02225E32C15184900636DC4 /* BaseNavigationView.swift in Sources */,
 				F02225D82C15101F00636DC4 /* Login.swift in Sources */,
+				F0210D4B2C161D4100D0557E /* HomeScene.swift in Sources */,
+				F0210D4D2C161D4800D0557E /* Home+UI.swift in Sources */,
 				F02225CF2C15093A00636DC4 /* NodeType.swift in Sources */,
 				F091EF7E2C10947400EB03EA /* BaseView.swift in Sources */,
 				F02225D62C150F7300636DC4 /* LoginViewModel.swift in Sources */,
@@ -438,6 +463,7 @@
 				F02225E12C1516E700636DC4 /* RegisterScene.swift in Sources */,
 				F02225DF2C1516E200636DC4 /* RegisterViewModel.swift in Sources */,
 				F02225C82C129AC200636DC4 /* Triangle.swift in Sources */,
+				F0210D492C160EFA00D0557E /* Home.swift in Sources */,
 				F02225E82C151A3300636DC4 /* AuthFormField.swift in Sources */,
 				F0C4BEC32C122656001A525F /* Triangle+UI.swift in Sources */,
 				F02225DA2C15102400636DC4 /* Register.swift in Sources */,
@@ -447,6 +473,8 @@
 				F0C4BEC72C12266B001A525F /* TriangleViewModel.swift in Sources */,
 				F0210D392C15FD7300D0557E /* OnboardingViewModel.swift in Sources */,
 				F02225D42C150F6A00636DC4 /* Login+UI.swift in Sources */,
+				F0210D512C16222000D0557E /* NavigationBarView.swift in Sources */,
+				F0210D4F2C161D5400D0557E /* HomeViewModel.swift in Sources */,
 				F02225C52C128D2500636DC4 /* UIImage+Extension.swift in Sources */,
 				F0210D372C15FD6900D0557E /* OnboardingScene.swift in Sources */,
 				AA5B23BA2BBE9E98007F708F /* HayattaKalApp.swift in Sources */,

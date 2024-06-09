@@ -8,12 +8,12 @@
 import Foundation
 
 struct RegisterModel {
-    var name:String
-    var surname:String
-    var email:String
-    var password:String
+    var name: String
+    var surname: String
+    var email: String
+    var password: String
 
-    enum RegisterEndpointField:String {
+    enum RegisterEndpointField: String {
         case name
         case surname
         case email

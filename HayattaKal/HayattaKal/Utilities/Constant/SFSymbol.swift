@@ -14,4 +14,5 @@ enum SFSymbol: String {
     case house
     case camera
     case gear
+    case fileMenuAndSelection = "filemenu.and.selection"
 }

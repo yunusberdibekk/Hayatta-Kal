@@ -7,12 +7,12 @@
 
 import Foundation
 
-struct OnboardingModel:Identifiable{
+struct OnboardingModel: Identifiable {
     let id = UUID().uuidString
     let image: String
     let title: String
     let description: String
-    
+
     static let items = [
         OnboardingModel(
             image: "Onboarding1",

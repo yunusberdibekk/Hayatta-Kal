@@ -19,7 +19,7 @@ extension View {
                 .foregroundColor(color)
         }
     }
-    
+
     @ViewBuilder
     func versionCornerRadius(_ radius: CGFloat) -> some View {
         if #available(iOS 17, *) {
@@ -39,7 +39,7 @@ extension View {
             self
         })
     }
-    
+
     func withHideKeyboardToolbar() -> some View {
         self
             .toolbar {
@@ -55,21 +55,20 @@ extension View {
 
 /// View extension + Modifier & Style
 extension View {
-    func authTextFieldModifier( foregroundColor: Color, backgroundColor: Color , size: CGSize,radius: CGFloat) -> some View{
+    func authTextFieldModifier(foregroundColor: Color, backgroundColor: Color, size: CGSize, radius: CGFloat) -> some View {
         modifier(AuthTextFieldModifier(foreground: foregroundColor,
                                        background: backgroundColor,
                                        size: size,
                                        radius: radius))
     }
-    
-    func authButtonModifier(foregroundColor: Color, colors: [Color] , size: CGSize,radius: CGFloat) -> some View{
+
+    func authButtonModifier(foregroundColor: Color, colors: [Color], size: CGSize, radius: CGFloat) -> some View {
         modifier(AuthButtonModifier(foreground: foregroundColor,
                                     colors: colors,
                                     size: size,
                                     radius: radius))
     }
-    
-    
+
     func authButtonStyle(scale: CGFloat = 0.90, opacity: CGFloat = 0.95) -> some View {
         buttonStyle(AuthButtonStyle(scale: scale, opacity: opacity))
     }
@@ -82,5 +81,10 @@ extension View {
             to: nil,
             from: nil,
             for: nil)
+    }
+
+    func commonShadow(color: Color = .shadow2) -> some View {
+        self
+            .shadow(color: color, radius: 12, y: 4)
     }
 }

@@ -11,20 +11,21 @@ extension TabScene {
     var bodyView: some View {
         ZStack {
             Color.white.ignoresSafeArea()
-            
+
             tabView
         }
     }
-    
+
     var tabView: some View {
-        TabView{
-            ForEach(TabModel.tabModels){ model in
+        TabView {
+            ForEach(TabModel.tabModels) { model in
                 model.page
-                    .tabItem{
+                    .tabItem {
                         Label(model.item.title,
                               systemImage: model.item.image.rawValue)
                     }
             }
         }
+        .tint(.orange1)
     }
 }

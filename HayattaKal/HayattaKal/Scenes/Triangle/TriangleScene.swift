@@ -17,7 +17,7 @@ struct TriangleScene: BaseView {
         }
         .onAppear(perform: onAppear)
     }
-    
+
     func onAppear() {
         let graph = DetectedNodeGraph()
         let firstNode = DetectedNode(type: .dolap,
@@ -29,7 +29,7 @@ struct TriangleScene: BaseView {
                                       predictedSafetyScore: Double.random(in: 0.1 ... 3.0),
                                       rectangle: .zero)
         let defaultNode = graph.nodes[0]
-        
+
         graph.addNode(node: firstNode)
         graph.addNeighbor(firstNode: defaultNode, secondNode: firstNode, cost: 100)
         graph.addNode(node: secondNode)

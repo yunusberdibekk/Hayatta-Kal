@@ -12,6 +12,10 @@ final class DetectedNodeGraph {
     var neighbors: [DetectedNode: [DetectedNode: Double]] = [:]
     
     init() {
+        addDefaultNode()
+    }
+    
+    private func addDefaultNode() {
         let defaultNode: DetectedNode = .init(type: .camera, alpha: .zero, predictedSafetyScore: .zero, rectangle: .zero)
         addNode(node: defaultNode)
     }
@@ -24,6 +28,12 @@ final class DetectedNodeGraph {
     func addNeighbor(firstNode: DetectedNode, secondNode: DetectedNode, cost: Double) {
         neighbors[firstNode]?[secondNode] = cost
         neighbors[secondNode]?[firstNode] = cost
+    }
+    
+    func resetNodes() {
+        nodes.removeAll()
+        neighbors = [:]
+        addDefaultNode()
     }
     
     func areNeighbors(firstNode: DetectedNode, secondNode: DetectedNode) -> Bool {
@@ -72,8 +82,8 @@ final class DetectedNodeGraph {
                 if currentNode.type != .camera {
                     addNeighbor(firstNode: currentNode,
                                 secondNode: nextNode,
-                                cost: calculateCost(from: currentNode.rectangle,
-                                                    to: nextNode.rectangle))
+                                cost: calculateCostForCenter(from: currentNode.rectangle,
+                                                             to: nextNode.rectangle))
                 }
             }
 
@@ -97,31 +107,48 @@ final class DetectedNodeGraph {
                 if canBeNeighbor {
                     addNeighbor(firstNode: currentNode,
                                 secondNode: potentialNeighbor,
-                                cost: calculateCost(from: currentNode.rectangle,
-                                                    to: potentialNeighbor.rectangle))
+                                cost: calculateCostForCenter(from: currentNode.rectangle,
+                                                             to: potentialNeighbor.rectangle))
                 }
             }
         }
     }
     
-    func calculateCost(from rect1: CGRect, to rect2: CGRect) -> Double {
-        let center1 = CGPoint(x: rect1.midX, y: rect1.midY)
-        let center2 = CGPoint(x: rect2.midX, y: rect2.midY)
-        let dx = center2.x - center1.x
-        let dy = center2.y - center1.y
+    func calculateCostForCenter(from rect1: CGRect, to rect2: CGRect) -> Double {
+        return abs((rect1.maxX - rect2.minX) / 0.4 / 10)
+    }
+    
+    func findHighestNodesNeighbors() -> (firstNode: DetectedNode, secondNode: DetectedNode?)? {
+        if nodes.count > 2 {
+            let highestNodes = nodes.sorted { $0.predictedSafetyScore > $1.predictedSafetyScore }
+            
+            for i in 0 ..< highestNodes.count {
+                let firstNode = highestNodes[i]
+                for j in (i + 1) ..< highestNodes.count {
+                    let secondNode = highestNodes[j]
+                    
+                    if areNeighbors(firstNode: firstNode, secondNode: secondNode) {
+                        return (firstNode, secondNode)
+                    }
+                }
+            }
+            return nil
+        } else if nodes.count == 2 {
+            return (nodes[1], nil)
+        }
         
-        return Double(sqrt(dx * dx + dy * dy))
+        return nil
     }
 }
 
 struct DetectedNode: Identifiable, Hashable {
     let id: String
     let type: NodeType
-    let alpha: Int
+    let alpha: CGFloat
     let predictedSafetyScore: CGFloat
     let rectangle: CGRect
     
-    init(type: NodeType, alpha: Int, predictedSafetyScore: CGFloat, rectangle: CGRect) {
+    init(type: NodeType, alpha: CGFloat, predictedSafetyScore: CGFloat, rectangle: CGRect) {
         self.id = UUID().uuidString
         self.type = type
         self.alpha = alpha

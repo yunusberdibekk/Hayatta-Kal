@@ -16,12 +16,6 @@ extension TriangleScene {
 
             ScrollView {
                 VStack {
-                    if let image = viewModel.selectedImage {
-                        image
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                    }
-
                     if let objectDetectorImage = viewModel.objectDetectorImage {
                         objectDetectorImage
                             .resizable()
@@ -33,24 +27,36 @@ extension TriangleScene {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                     }
+
+                    if let safetyAreaImage = viewModel.safetyAreaImage {
+                        safetyAreaImage
+                            .resizable()
+                            .aspectRatio(contentMode: .fit)
+                    }
                 }
             }
         }
         .task(id: viewModel.photosPickerItem) {
             await viewModel.loadImage()
         }
+        .photosPicker(isPresented: $viewModel.showPhotosPicker,
+                      selection: $viewModel.photosPickerItem,
+                      matching: .images,
+                      photoLibrary: .shared())
         .toolbar {
-            PhotosPicker(selection: $viewModel.photosPickerItem, matching: .images, photoLibrary: .shared()) {
-                Image(systemName: "plus")
+            ToolbarItem(placement: .topBarTrailing) {
+                PhotosPicker(selection: $viewModel.photosPickerItem, matching: .images, photoLibrary: .shared()) {
+                    Image(systemName: "plus")
+                }
+            }
+
+            ToolbarItem(placement: .topBarLeading) {
+                Button {
+                    viewModel.clear()
+                } label: {
+                    Image(systemName: "xmark")
+                }
             }
         }
     }
 }
-
-// MARK: - Publics
-
-extension TriangleScene {}
-
-// MARK: - Privates
-
-private extension TriangleScene {}

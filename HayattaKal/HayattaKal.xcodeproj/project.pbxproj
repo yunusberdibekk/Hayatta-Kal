@@ -51,12 +51,12 @@
 		F0C4BEC32C122656001A525F /* Triangle+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4BEC22C122656001A525F /* Triangle+UI.swift */; };
 		F0C4BEC52C12265F001A525F /* TriangleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4BEC42C12265F001A525F /* TriangleScene.swift */; };
 		F0C4BEC72C12266B001A525F /* TriangleViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4BEC62C12266B001A525F /* TriangleViewModel.swift */; };
-		F0F61FEE2C1674A3000F5A00 /* DETECTOR.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F0F61FEB2C167478000F5A00 /* DETECTOR.mlmodel */; };
 		F0F61FF02C1674A3000F5A00 /* FCRN.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F0F61FED2C1674A3000F5A00 /* FCRN.mlmodel */; };
 		F0F61FF32C1674DD000F5A00 /* ProfileScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F61FF22C1674DD000F5A00 /* ProfileScene.swift */; };
 		F0F61FF52C1674E6000F5A00 /* Profile+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F61FF42C1674E6000F5A00 /* Profile+UI.swift */; };
 		F0F61FF72C1675F4000F5A00 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F61FF62C1675F4000F5A00 /* ProfileViewModel.swift */; };
 		F0F61FF92C1675FF000F5A00 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F61FF82C1675FF000F5A00 /* Profile.swift */; };
+		F0F61FFB2C16B98B000F5A00 /* V1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F0F61FFA2C16B98B000F5A00 /* V1.mlmodel */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -105,12 +105,12 @@
 		F0C4BEC22C122656001A525F /* Triangle+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Triangle+UI.swift"; sourceTree = "<group>"; };
 		F0C4BEC42C12265F001A525F /* TriangleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleScene.swift; sourceTree = "<group>"; };
 		F0C4BEC62C12266B001A525F /* TriangleViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleViewModel.swift; sourceTree = "<group>"; };
-		F0F61FEB2C167478000F5A00 /* DETECTOR.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = DETECTOR.mlmodel; sourceTree = "<group>"; };
 		F0F61FED2C1674A3000F5A00 /* FCRN.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = FCRN.mlmodel; path = ../../../../../../../Documents/FCRN.mlmodel; sourceTree = "<group>"; };
 		F0F61FF22C1674DD000F5A00 /* ProfileScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScene.swift; sourceTree = "<group>"; };
 		F0F61FF42C1674E6000F5A00 /* Profile+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+UI.swift"; sourceTree = "<group>"; };
 		F0F61FF62C1675F4000F5A00 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		F0F61FF82C1675FF000F5A00 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
+		F0F61FFA2C16B98B000F5A00 /* V1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = V1.mlmodel; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -381,8 +381,8 @@
 		F0F61FEA2C16745E000F5A00 /* ML */ = {
 			isa = PBXGroup;
 			children = (
+				F0F61FFA2C16B98B000F5A00 /* V1.mlmodel */,
 				F0F61FED2C1674A3000F5A00 /* FCRN.mlmodel */,
-				F0F61FEB2C167478000F5A00 /* DETECTOR.mlmodel */,
 			);
 			path = ML;
 			sourceTree = "<group>";
@@ -493,7 +493,6 @@
 				F0C4BEC52C12265F001A525F /* TriangleScene.swift in Sources */,
 				F02225D22C150F5D00636DC4 /* LoginScene.swift in Sources */,
 				F091EF802C10947A00EB03EA /* BaseBodyView.swift in Sources */,
-				F0F61FEE2C1674A3000F5A00 /* DETECTOR.mlmodel in Sources */,
 				F02225EF2C151AA500636DC4 /* Auth.swift in Sources */,
 				F02225E12C1516E700636DC4 /* RegisterScene.swift in Sources */,
 				F02225DF2C1516E200636DC4 /* RegisterViewModel.swift in Sources */,
@@ -509,6 +508,7 @@
 				F02225D42C150F6A00636DC4 /* Login+UI.swift in Sources */,
 				F0210D512C16222000D0557E /* NavigationBarView.swift in Sources */,
 				F0210D4F2C161D5400D0557E /* HomeViewModel.swift in Sources */,
+				F0F61FFB2C16B98B000F5A00 /* V1.mlmodel in Sources */,
 				F0F61FF72C1675F4000F5A00 /* ProfileViewModel.swift in Sources */,
 				F02225C52C128D2500636DC4 /* UIImage+Extension.swift in Sources */,
 				F0210D582C16615400D0557E /* HomeDetailScene.swift in Sources */,

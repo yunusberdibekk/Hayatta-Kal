@@ -11,11 +11,6 @@ import SwiftUI
 struct HayattaKalApp: App {
     @AppStorage("showLogin") var showLogin: Bool = true
 
-    init() {
-        UINavigationBar.appearance().largeTitleTextAttributes = [.foregroundColor: UIColor.white]
-        UINavigationBar.appearance().titleTextAttributes = [.foregroundColor: UIColor.black]
-    }
-
     var body: some Scene {
         WindowGroup {
             if showLogin {

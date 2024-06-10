@@ -22,9 +22,9 @@ struct TabModel: Identifiable {
               item: .init(title: "Create",
                           image: .camera)),
         .init(id: "3",
-              page: AnyView(TriangleScene()),
-              item: .init(title: "Settings",
-                          image: .gear)),
+              page: AnyView(ProfileScene()),
+              item: .init(title: "Profile",
+                          image: .person)),
     ]
 }
 

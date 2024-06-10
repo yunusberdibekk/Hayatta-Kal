@@ -9,6 +9,7 @@ import Foundation
 
 enum SFSymbol: String {
     case personFill = "person.fill"
+    case person
     case lockFill = "lock.fill"
     case envelopeFill = "envelope.fill"
     case house

@@ -26,7 +26,6 @@
 		F0210D562C16614E00D0557E /* HomeDetail+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D552C16614D00D0557E /* HomeDetail+UI.swift */; };
 		F0210D582C16615400D0557E /* HomeDetailScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D572C16615400D0557E /* HomeDetailScene.swift */; };
 		F02225C52C128D2500636DC4 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225C42C128D2500636DC4 /* UIImage+Extension.swift */; };
-		F02225C82C129AC200636DC4 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225C72C129AC200636DC4 /* Triangle.swift */; };
 		F02225CF2C15093A00636DC4 /* NodeType.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225CE2C15093A00636DC4 /* NodeType.swift */; };
 		F02225D22C150F5D00636DC4 /* LoginScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225D12C150F5D00636DC4 /* LoginScene.swift */; };
 		F02225D42C150F6A00636DC4 /* Login+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225D32C150F6A00636DC4 /* Login+UI.swift */; };
@@ -57,6 +56,9 @@
 		F0F61FF72C1675F4000F5A00 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F61FF62C1675F4000F5A00 /* ProfileViewModel.swift */; };
 		F0F61FF92C1675FF000F5A00 /* Profile.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F61FF82C1675FF000F5A00 /* Profile.swift */; };
 		F0F61FFB2C16B98B000F5A00 /* V1.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F0F61FFA2C16B98B000F5A00 /* V1.mlmodel */; };
+		F0F620122C18C283000F5A00 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F620112C18C283000F5A00 /* Node.swift */; };
+		F0F620142C18C288000F5A00 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F620132C18C288000F5A00 /* Graph.swift */; };
+		F0F620162C18F393000F5A00 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F620152C18F393000F5A00 /* Triangle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -80,7 +82,6 @@
 		F0210D552C16614D00D0557E /* HomeDetail+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeDetail+UI.swift"; sourceTree = "<group>"; };
 		F0210D572C16615400D0557E /* HomeDetailScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailScene.swift; sourceTree = "<group>"; };
 		F02225C42C128D2500636DC4 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
-		F02225C72C129AC200636DC4 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 		F02225CE2C15093A00636DC4 /* NodeType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NodeType.swift; sourceTree = "<group>"; };
 		F02225D12C150F5D00636DC4 /* LoginScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginScene.swift; sourceTree = "<group>"; };
 		F02225D32C150F6A00636DC4 /* Login+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Login+UI.swift"; sourceTree = "<group>"; };
@@ -111,6 +112,9 @@
 		F0F61FF62C1675F4000F5A00 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
 		F0F61FF82C1675FF000F5A00 /* Profile.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Profile.swift; sourceTree = "<group>"; };
 		F0F61FFA2C16B98B000F5A00 /* V1.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; path = V1.mlmodel; sourceTree = "<group>"; };
+		F0F620112C18C283000F5A00 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
+		F0F620132C18C288000F5A00 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
+		F0F620152C18F393000F5A00 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -218,7 +222,7 @@
 				F0F61FF82C1675FF000F5A00 /* Profile.swift */,
 				F02225D92C15102400636DC4 /* Register.swift */,
 				F0210D452C1607B400D0557E /* Tab.swift */,
-				F02225C72C129AC200636DC4 /* Triangle.swift */,
+				F0F620152C18F393000F5A00 /* Triangle.swift */,
 			);
 			path = Scenes;
 			sourceTree = "<group>";
@@ -362,6 +366,7 @@
 		F0C4BEB52C1222A1001A525F /* Models */ = {
 			isa = PBXGroup;
 			children = (
+				F0F620102C18C273000F5A00 /* Shared */,
 				F0F61FEA2C16745E000F5A00 /* ML */,
 				F02225C62C129ABD00636DC4 /* Scenes */,
 			);
@@ -381,8 +386,8 @@
 		F0F61FEA2C16745E000F5A00 /* ML */ = {
 			isa = PBXGroup;
 			children = (
-				F0F61FFA2C16B98B000F5A00 /* V1.mlmodel */,
 				F0F61FED2C1674A3000F5A00 /* FCRN.mlmodel */,
+				F0F61FFA2C16B98B000F5A00 /* V1.mlmodel */,
 			);
 			path = ML;
 			sourceTree = "<group>";
@@ -395,6 +400,15 @@
 				F0F61FF62C1675F4000F5A00 /* ProfileViewModel.swift */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		F0F620102C18C273000F5A00 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				F0F620132C18C288000F5A00 /* Graph.swift */,
+				F0F620112C18C283000F5A00 /* Node.swift */,
+			);
+			path = Shared;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -479,6 +493,8 @@
 				F02225D82C15101F00636DC4 /* Login.swift in Sources */,
 				F0F61FF32C1674DD000F5A00 /* ProfileScene.swift in Sources */,
 				F0210D4B2C161D4100D0557E /* HomeScene.swift in Sources */,
+				F0F620122C18C283000F5A00 /* Node.swift in Sources */,
+				F0F620162C18F393000F5A00 /* Triangle.swift in Sources */,
 				F0210D4D2C161D4800D0557E /* Home+UI.swift in Sources */,
 				F02225CF2C15093A00636DC4 /* NodeType.swift in Sources */,
 				F091EF7E2C10947400EB03EA /* BaseView.swift in Sources */,
@@ -490,13 +506,13 @@
 				F0210D3C2C16046E00D0557E /* AuthScene.swift in Sources */,
 				F0F61FF02C1674A3000F5A00 /* FCRN.mlmodel in Sources */,
 				F02225DD2C1516DB00636DC4 /* Register+UI.swift in Sources */,
+				F0F620142C18C288000F5A00 /* Graph.swift in Sources */,
 				F0C4BEC52C12265F001A525F /* TriangleScene.swift in Sources */,
 				F02225D22C150F5D00636DC4 /* LoginScene.swift in Sources */,
 				F091EF802C10947A00EB03EA /* BaseBodyView.swift in Sources */,
 				F02225EF2C151AA500636DC4 /* Auth.swift in Sources */,
 				F02225E12C1516E700636DC4 /* RegisterScene.swift in Sources */,
 				F02225DF2C1516E200636DC4 /* RegisterViewModel.swift in Sources */,
-				F02225C82C129AC200636DC4 /* Triangle.swift in Sources */,
 				F0210D492C160EFA00D0557E /* Home.swift in Sources */,
 				F02225E82C151A3300636DC4 /* AuthFormField.swift in Sources */,
 				F0C4BEC32C122656001A525F /* Triangle+UI.swift in Sources */,

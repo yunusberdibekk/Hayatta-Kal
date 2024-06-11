@@ -15,20 +15,32 @@ extension TriangleScene {
             Color.white.ignoresSafeArea()
 
             ScrollView {
-                VStack {
-                    if let objectDetectorImage = viewModel.objectDetectorImage {
+                VStack(alignment: .leading) {
+                    if let objectDetectorImage = viewModel.fullNetworkImage {
+                        Text("Tespit Edilen Nesneler")
+                            .font(.title2)
+                            .bold()
+                            .versionForegroundColor(.orange1)
+                            .padding()
+
                         objectDetectorImage
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                     }
 
-                    if let depthDetectorImage = viewModel.depthDetectorImage {
-                        depthDetectorImage
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
-                    }
+//                    if let depthDetectorImage = viewModel.depthDetectorImage {
+//                        depthDetectorImage
+//                            .resizable()
+//                            .aspectRatio(contentMode: .fit)
+//                    }
 
                     if let safetyAreaImage = viewModel.safetyAreaImage {
+                        Text("Güvenli Alan")
+                            .font(.title2)
+                            .bold()
+                            .versionForegroundColor(.orange1)
+                            .padding()
+
                         safetyAreaImage
                             .resizable()
                             .aspectRatio(contentMode: .fit)

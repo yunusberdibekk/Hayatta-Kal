@@ -16,7 +16,6 @@ struct LoginModel {
         case password
     }
 
-    static var empty = LoginModel(
-        email: "",
-        password: "")
+    static var empty = LoginModel(email: "",
+                                  password: "")
 }

@@ -1,0 +1,13 @@
+{
+  "MLModelVersionStringKey" : "1.0",
+  "MLModelDescriptionKey" : "It focuses on detecting specific items used in daily life for the computer engineering undergraduate graduation thesis at Firat University.,",
+  "MLModelCreatorDefinedKey" : {
+    "com.apple.createml.app.tag" : "121.4",
+    "com.apple.createml.version" : "14.4.1",
+    "com.apple.createml.app.version" : "5.0",
+    "com.apple.coreml.model.preview.type" : "objectDetector",
+    "iterations" : "12490"
+  },
+  "MLModelAuthorKey" : "Yunus Emre Berdibek",
+  "MLModelLicenseKey" : "--"
+}

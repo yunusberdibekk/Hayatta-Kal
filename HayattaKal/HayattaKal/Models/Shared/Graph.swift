@@ -7,11 +7,9 @@
 
 import Foundation
 
-final class Graph {
+final class Graph: NSObject {
     var nodes: [Node] = []
     var neighbors: [Node: [Node: Double]] = [:]
-    
-    init() {}
     
     func addNode(node: Node) {
         nodes.append(node)
@@ -151,6 +149,6 @@ private extension Graph {
     func calculateCostBetweenNeighbors(firstNode: Node, secondNode: Node) -> Bool {
         let cost = neighbors[firstNode]?[secondNode] ?? .zero
         
-        return cost >= 15 && cost <= 60 ? true : false
+        return cost >= 1 && cost <= 60 ? true : false
     }
 }

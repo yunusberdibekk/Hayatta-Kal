@@ -19,7 +19,7 @@ struct TriangleScene: BaseView {
     }
 
     func onAppear() {
-        viewModel.showPhotosPicker.toggle()
+        viewModel.showPickerItem.toggle()
     }
 }
 

@@ -1,5 +1,5 @@
 //
-//  Triangle.swift
+//  TriangleModel.swift
 //  HayattaKal
 //
 //  Created by Yunus Emre Berdibek on 12.06.2024.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct Triangle: Identifiable {
+struct TriangleModel: Identifiable {
     let id = UUID().uuidString
     var selectedImage: Image?
     var selectedUIImage: UIImage?
@@ -17,6 +17,7 @@ struct Triangle: Identifiable {
     var fcrnOnSelectedImage: Image?
     var safetyAreaImage: Image?
     var graphImage: Image?
+    var safetyNode: SafetyNode?
 
-    static var empty: Triangle = .init()
+    static var empty: TriangleModel = .init()
 }

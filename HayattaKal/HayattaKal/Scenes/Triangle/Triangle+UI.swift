@@ -15,21 +15,24 @@ extension TriangleScene {
             Color.white.ignoresSafeArea()
 
             List {
-                sectionView(title: "Analiz Edilecek Resim", image: viewModel.triangleImages.selectedImage)
+                sectionView(title: "Analiz Edilecek Resim", image: viewModel.triangleModel.selectedImage)
 
-                sectionView(title: "Nesne Tespiti", image: viewModel.triangleImages.fullNetworkImage)
+                sectionView(title: "Nesne Tespiti", image: viewModel.triangleModel.fullNetworkImage)
 
-                sectionView(title: "Derinlik Analizi", image: viewModel.triangleImages.fcrnOnSelectedImage)
+                sectionView(title: "Derinlik Analizi", image: viewModel.triangleModel.fcrnOnSelectedImage)
 
-                sectionView(title: "Tespit Edilen Nesnelerin Derinlik Analizi", image: viewModel.triangleImages.fcrnOnNodesImage)
+                sectionView(title: "Tespit Edilen Nesnelerin Derinlik Analizi", image: viewModel.triangleModel.fcrnOnNodesImage)
 
-                sectionView(title: "Tespit Edilen Güvenli Alan", image: viewModel.triangleImages.safetyAreaImage)
+                sectionView(title: "Tespit Edilen Güvenli Alan", image: viewModel.triangleModel.safetyAreaImage)
 
-                sectionView(title: "Tespit Edilen Nesneler ve Graf Yapısı", image: viewModel.triangleImages.graphImage)
+                sectionView(title: "Tespit Edilen Nesneler ve Graf Yapısı", image: viewModel.triangleModel.graphImage)
             }
             .task(id: viewModel.photosPickerItem) {
                 await viewModel.loadImage()
             }
+            .alert("Dikkat! Tespit edilen \(viewModel.triangleModel.safetyNode?.node.type.name ?? "") nesnesinin sabitlenmiş olduğundan emin olmanız gerekmektedir.", isPresented: $viewModel.showAlert, actions: {
+                Button("OK") {}
+            })
             .photosPicker(isPresented: $viewModel.showPhotosPicker,
                           selection: $viewModel.photosPickerItem,
                           matching: .images,

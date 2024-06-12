@@ -9,7 +9,6 @@ import SwiftUI
 
 enum NodeType: String {
     case dolap, koltuk, masa, sifonyer, yatak
-    case camera
 
     var name: String {
         rawValue.capitalized
@@ -27,8 +26,6 @@ enum NodeType: String {
             0.60
         case .yatak:
             0.90
-        case .camera:
-            .zero
         }
     }
 
@@ -44,8 +41,6 @@ enum NodeType: String {
             UIColor.systemMint
         case .yatak:
             UIColor.systemGreen
-        case .camera:
-            UIColor(resource: .argent)
         }
     }
 }

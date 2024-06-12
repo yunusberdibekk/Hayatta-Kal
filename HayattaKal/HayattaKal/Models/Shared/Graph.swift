@@ -18,16 +18,6 @@ final class Graph {
         neighbors[node] = [:]
     }
     
-    func addDefaultNode() {
-        let defaultNode: Node = .init(type: .camera,
-                                      alpha: .zero,
-                                      safetyScore: .zero,
-                                      rect: .zero)
-        
-        nodes.append(defaultNode)
-        neighbors[defaultNode] = [:]
-    }
-    
     func addNeighbor(firstNode: Node, secondNode: Node, cost: Double) {
         neighbors[firstNode]?[secondNode] = cost
         neighbors[secondNode]?[firstNode] = cost
@@ -70,10 +60,6 @@ extension Graph {
 
     func addNeighborsAccordingToConditions() {
         for (currentIndex, currentNode) in nodes.enumerated() {
-            if currentNode.type == .camera {
-                continue
-            }
-            
             for nextIndex in stride(from: currentIndex + 1, to: nodes.count, by: 1) {
                 let nextNode = nodes[nextIndex]
                 
@@ -112,9 +98,7 @@ extension Graph {
             var safetyNode: SafetyNode?
             
             for currentNode in safetyNodes {
-                if let neighbors = neighbors[currentNode],
-                   currentNode.type != .camera
-                {
+                if let neighbors = neighbors[currentNode] {
                     for neighbor in neighbors {
                         let key = neighbor.key
                         

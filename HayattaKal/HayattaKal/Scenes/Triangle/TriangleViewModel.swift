@@ -12,7 +12,8 @@ import Vision
 final class TriangleViewModel: ObservableObject {
     @Published var photosPickerItem: PhotosPickerItem? = nil
     @Published var showPhotosPicker: Bool = false
-    @Published var triangleImages: Triangle = .empty
+    @Published var showAlert: Bool = false
+    @Published var triangleModel: TriangleModel = .empty
     
     private let graph: Graph = .init()
 }
@@ -28,15 +29,15 @@ extension TriangleViewModel {
             let uiImage = UIImage(data: data)
         else { return }
         
-        self.triangleImages.selectedImage = Image(uiImage: uiImage)
-        self.triangleImages.selectedUIImage = uiImage
+        self.triangleModel.selectedImage = Image(uiImage: uiImage)
+        self.triangleModel.selectedUIImage = uiImage
         self.graph.resetNodes()
 
         callFullNetworkRequest()
     }
     
     func clear() {
-        self.triangleImages = .empty
+        self.triangleModel = .empty
         self.graph.resetNodes()
     }
 }
@@ -73,7 +74,7 @@ private extension TriangleViewModel {
     
     func callFullNetworkRequest() {
         guard
-            let image = triangleImages.selectedUIImage?.resize(to: CGSize(width: 600, height: 600)),
+            let image = triangleModel.selectedUIImage?.resize(to: CGSize(width: 600, height: 600)),
             let oriantation = CGImagePropertyOrientation(rawValue: UInt32(image.imageOrientation.rawValue)),
             let ciImage = CIImage(image: image)
         else { return }
@@ -91,7 +92,7 @@ private extension TriangleViewModel {
     }
     
     func drawFullNetworkRequest(detections: [VNRecognizedObjectObservation]) {
-        guard let image = triangleImages.selectedUIImage else { return }
+        guard let image = triangleModel.selectedUIImage else { return }
         let imageSize = image.size
         let scale: CGFloat = 0
         
@@ -135,8 +136,8 @@ private extension TriangleViewModel {
         
         if let newImage {
             DispatchQueue.main.async {
-                self.triangleImages.fullNetworkImage = Image(uiImage: newImage)
-                self.triangleImages.fullNetworkUIImage = newImage
+                self.triangleModel.fullNetworkImage = Image(uiImage: newImage)
+                self.triangleModel.fullNetworkUIImage = newImage
 
                 self.graph.addNeighborsAccordingToConditions()
 //                self.graph.readNeighborsMatrix()
@@ -215,7 +216,7 @@ private extension TriangleViewModel {
     
     func callFcrnRequest(onNodes: Bool) {
         guard
-            let image = triangleImages.selectedUIImage,
+            let image = triangleModel.selectedUIImage,
             let cgImage = image.cgImage,
             let oriantation = CGImagePropertyOrientation(rawValue: UInt32(image.imageOrientation.rawValue))
         else { return }
@@ -233,7 +234,7 @@ private extension TriangleViewModel {
     }
     
     func drawFcrnOnDetectedNodes(heatmap: [[Double]]) {
-        guard let image = triangleImages.selectedUIImage else { return }
+        guard let image = triangleModel.selectedUIImage else { return }
         let imageSize = image.size
                    
         UIGraphicsBeginImageContextWithOptions(imageSize, false, 0.0)
@@ -280,14 +281,14 @@ private extension TriangleViewModel {
                    
         if let newImage {
             DispatchQueue.main.async {
-                self.triangleImages.fcrnOnNodesImage = Image(uiImage: newImage)
+                self.triangleModel.fcrnOnNodesImage = Image(uiImage: newImage)
                 self.drawSafetyNode()
             }
         }
     }
     
     func drawFcrnOnSelectedImage(heatmap: [[Double]]) {
-        guard let image = triangleImages.selectedUIImage else { return }
+        guard let image = triangleModel.selectedUIImage else { return }
         let imageSize = image.size
                    
         UIGraphicsBeginImageContextWithOptions(imageSize, false, 0.0)
@@ -327,7 +328,7 @@ private extension TriangleViewModel {
                    
         if let newImage {
             DispatchQueue.main.async {
-                self.triangleImages.fcrnOnSelectedImage = Image(uiImage: newImage)
+                self.triangleModel.fcrnOnSelectedImage = Image(uiImage: newImage)
                 self.callFcrnRequest(onNodes: true)
             }
         }
@@ -338,10 +339,10 @@ private extension TriangleViewModel {
     func drawSafetyNode() {
         DispatchQueue.global(qos: .userInitiated).async { [weak self] in
             guard let self else { return }
-            guard let image = triangleImages.selectedUIImage,
+            guard let image = triangleModel.selectedUIImage,
                   let safetyNode = graph.findSafetyNode() else { return }
-            
-            let imageSize = image.size
+            var isSafety = true
+            let imageSize: CGSize = image.size
             let scale: CGFloat = 0
             
             UIGraphicsBeginImageContextWithOptions(imageSize, false, scale)
@@ -365,6 +366,11 @@ private extension TriangleViewModel {
                 let y = safetyNode.node.rect.origin.y + safetyNode.node.rect.height / 2
                 let height = safetyNode.node.rect.height / 2
                 let rectangle = CGRect(x: minX, y: y, width: maxX - minX, height: height)
+                let safetyType = safetyNode.node.type
+                
+                if safetyType == .dolap || safetyType == .masa || safetyType == .sifonyer {
+                    isSafety = false
+                }
                 
                 context.setFillColor(UIColor.red.withAlphaComponent(0.5).cgColor)
                 context.addRect(rectangle)
@@ -375,10 +381,12 @@ private extension TriangleViewModel {
             UIGraphicsEndImageContext()
             
             if let newImage,
-               let selectedUIImage = triangleImages.selectedUIImage
+               let selectedUIImage = triangleModel.selectedUIImage
             {
                 DispatchQueue.main.async {
-                    self.triangleImages.safetyAreaImage = Image(uiImage: newImage)
+                    self.triangleModel.safetyAreaImage = Image(uiImage: newImage)
+                    self.triangleModel.safetyNode = safetyNode
+                    self.showAlert = !isSafety
                 }
                 
                 self.drawGraph(size: selectedUIImage.size, nodes: graph.nodes, neighbors: graph.neighbors)
@@ -458,7 +466,7 @@ private extension TriangleViewModel {
         
         if let newImage {
             DispatchQueue.main.async {
-                self.triangleImages.graphImage = Image(uiImage: newImage)
+                self.triangleModel.graphImage = Image(uiImage: newImage)
             }
         }
     }

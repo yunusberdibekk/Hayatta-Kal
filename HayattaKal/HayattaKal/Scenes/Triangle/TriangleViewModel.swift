@@ -367,14 +367,18 @@ private extension TriangleViewModel {
                 let height = safetyNode.node.rect.height / 2
                 let rectangle = CGRect(x: minX, y: y, width: maxX - minX, height: height)
                 let safetyType = safetyNode.node.type
-                
+
                 if safetyType == .dolap || safetyType == .masa || safetyType == .sifonyer {
                     isSafety = false
                 }
-                
+
                 context.setFillColor(UIColor.red.withAlphaComponent(0.5).cgColor)
                 context.addRect(rectangle)
                 context.drawPath(using: .fill)
+                context.setStrokeColor(UIColor.black.cgColor)
+                context.setLineWidth(2.0)
+                context.addRect(rectangle)
+                context.drawPath(using: .stroke)
             }
             
             let newImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -420,7 +424,7 @@ private extension TriangleViewModel {
             context.strokePath()
             
             let safetyScore = String(format: "%.2f", node.safetyScore)
-            let text = "\(node.type.name)- \(safetyScore)"
+            let text = "\(node.type.name):\(safetyScore)"
             let font = UIFont.boldSystemFont(ofSize: 28)
             let textSize = text.size(withAttributes: [NSAttributedString.Key.font: font])
             let textRect = CGRect(x: node.rect.midX - textSize.width / 2,

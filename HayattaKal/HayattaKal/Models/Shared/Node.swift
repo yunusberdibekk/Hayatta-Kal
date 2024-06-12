@@ -10,7 +10,7 @@ import Foundation
 struct Node: Identifiable, Hashable {
     let id: String
     let type: NodeType
-    let alpha: CGFloat
+    var alpha: CGFloat
     let safetyScore: CGFloat
     let rect: CGRect
 

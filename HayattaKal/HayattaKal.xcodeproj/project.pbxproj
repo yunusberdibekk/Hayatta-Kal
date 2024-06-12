@@ -22,7 +22,6 @@
 		F0210D4B2C161D4100D0557E /* HomeScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D4A2C161D4100D0557E /* HomeScene.swift */; };
 		F0210D4D2C161D4800D0557E /* Home+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D4C2C161D4800D0557E /* Home+UI.swift */; };
 		F0210D4F2C161D5400D0557E /* HomeViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D4E2C161D5400D0557E /* HomeViewModel.swift */; };
-		F0210D512C16222000D0557E /* NavigationBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D502C16222000D0557E /* NavigationBarView.swift */; };
 		F0210D562C16614E00D0557E /* HomeDetail+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D552C16614D00D0557E /* HomeDetail+UI.swift */; };
 		F0210D582C16615400D0557E /* HomeDetailScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D572C16615400D0557E /* HomeDetailScene.swift */; };
 		F02225C52C128D2500636DC4 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F02225C42C128D2500636DC4 /* UIImage+Extension.swift */; };
@@ -59,6 +58,7 @@
 		F0F620122C18C283000F5A00 /* Node.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F620112C18C283000F5A00 /* Node.swift */; };
 		F0F620142C18C288000F5A00 /* Graph.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F620132C18C288000F5A00 /* Graph.swift */; };
 		F0F620162C18F393000F5A00 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F620152C18F393000F5A00 /* Triangle.swift */; };
+		F0F620182C1922DF000F5A00 /* MLModelConfiguration+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F620172C1922DF000F5A00 /* MLModelConfiguration+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,7 +78,6 @@
 		F0210D4A2C161D4100D0557E /* HomeScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScene.swift; sourceTree = "<group>"; };
 		F0210D4C2C161D4800D0557E /* Home+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Home+UI.swift"; sourceTree = "<group>"; };
 		F0210D4E2C161D5400D0557E /* HomeViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewModel.swift; sourceTree = "<group>"; };
-		F0210D502C16222000D0557E /* NavigationBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationBarView.swift; sourceTree = "<group>"; };
 		F0210D552C16614D00D0557E /* HomeDetail+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "HomeDetail+UI.swift"; sourceTree = "<group>"; };
 		F0210D572C16615400D0557E /* HomeDetailScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeDetailScene.swift; sourceTree = "<group>"; };
 		F02225C42C128D2500636DC4 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
@@ -115,6 +114,7 @@
 		F0F620112C18C283000F5A00 /* Node.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Node.swift; sourceTree = "<group>"; };
 		F0F620132C18C288000F5A00 /* Graph.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Graph.swift; sourceTree = "<group>"; };
 		F0F620152C18F393000F5A00 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
+		F0F620172C1922DF000F5A00 /* MLModelConfiguration+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "MLModelConfiguration+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -267,7 +267,6 @@
 		F02225E52C151A1700636DC4 /* Components */ = {
 			isa = PBXGroup;
 			children = (
-				F0210D502C16222000D0557E /* NavigationBarView.swift */,
 				F02225E72C151A3300636DC4 /* AuthFormField.swift */,
 			);
 			path = Components;
@@ -305,6 +304,7 @@
 				F038A84D2C125DFC00D4E1B0 /* MLMultiArray+Extension.swift */,
 				F02225C42C128D2500636DC4 /* UIImage+Extension.swift */,
 				F02225EC2C151A7C00636DC4 /* View+Extension.swift */,
+				F0F620172C1922DF000F5A00 /* MLModelConfiguration+Extension.swift */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -493,6 +493,7 @@
 				F02225D82C15101F00636DC4 /* Login.swift in Sources */,
 				F0F61FF32C1674DD000F5A00 /* ProfileScene.swift in Sources */,
 				F0210D4B2C161D4100D0557E /* HomeScene.swift in Sources */,
+				F0F620182C1922DF000F5A00 /* MLModelConfiguration+Extension.swift in Sources */,
 				F0F620122C18C283000F5A00 /* Node.swift in Sources */,
 				F0F620162C18F393000F5A00 /* Triangle.swift in Sources */,
 				F0210D4D2C161D4800D0557E /* Home+UI.swift in Sources */,
@@ -522,7 +523,6 @@
 				F0C4BEC72C12266B001A525F /* TriangleViewModel.swift in Sources */,
 				F0210D392C15FD7300D0557E /* OnboardingViewModel.swift in Sources */,
 				F02225D42C150F6A00636DC4 /* Login+UI.swift in Sources */,
-				F0210D512C16222000D0557E /* NavigationBarView.swift in Sources */,
 				F0210D4F2C161D5400D0557E /* HomeViewModel.swift in Sources */,
 				F0F61FFB2C16B98B000F5A00 /* V1.mlmodel in Sources */,
 				F0F61FF72C1675F4000F5A00 /* ProfileViewModel.swift in Sources */,

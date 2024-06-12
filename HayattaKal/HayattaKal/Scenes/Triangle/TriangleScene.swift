@@ -13,7 +13,7 @@ struct TriangleScene: BaseView {
     var body: some View {
         BaseStackView {
             bodyView
-                .navigationTitle("Yaşam Üçgeni")
+                .navigationTitle("Yaşam Üçgeni Tespiti")
         }
         .onAppear(perform: onAppear)
     }

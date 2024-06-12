@@ -16,4 +16,6 @@ enum SFSymbol: String {
     case camera
     case gear
     case fileMenuAndSelection = "filemenu.and.selection"
+    case photoBadgePlusFill = "photo.badge.plus.fill"
+    case trashFill = "trash.fill"
 }

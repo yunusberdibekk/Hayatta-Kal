@@ -77,15 +77,12 @@ extension Graph {
             for nextIndex in stride(from: currentIndex + 1, to: nodes.count, by: 1) {
                 let nextNode = nodes[nextIndex]
                 
-                print("currentNode:\(currentNode.type.name)")
-                print("nextNode: \(nextNode.type.name)")
-
                 if (nextIndex - currentIndex) == 1 {
                     addNeighbor(firstNode: currentNode,
                                 secondNode: nextNode,
                                 cost: calculateCost(from: currentNode.rect,
                                                     to: nextNode.rect))
-                    continue // break olsa?
+                    continue
                 }
                 
                 let minHeight = currentNode.rect.height < nextNode.rect.height ? currentNode.rect.height : nextNode.rect.height
@@ -146,8 +143,12 @@ extension Graph {
                 return safetyNode
             }
         } else {
-            return .init(node: self.nodes[0],
-                         safetyPercentage: nodes[0].safetyScore)
+            if !nodes.isEmpty {
+                return .init(node: self.nodes[0],
+                             safetyPercentage: nodes[0].safetyScore)
+            }
+            
+            return nil
         }
     }
 }

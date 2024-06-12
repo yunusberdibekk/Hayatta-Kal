@@ -14,60 +14,49 @@ extension TriangleScene {
         ZStack {
             Color.white.ignoresSafeArea()
 
-            ScrollView {
-                VStack(alignment: .leading) {
-                    if let objectDetectorImage = viewModel.fullNetworkImage {
-                        Text("Tespit Edilen Nesneler")
-                            .font(.title2)
-                            .bold()
-                            .versionForegroundColor(.orange1)
-                            .padding()
+            List {
+                sectionView(title: "Analiz Edilecek Resim", image: viewModel.triangleImages.selectedImage)
 
-                        objectDetectorImage
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
+                sectionView(title: "Nesne Tespiti", image: viewModel.triangleImages.fullNetworkImage)
+
+                sectionView(title: "Derinlik Analizi", image: viewModel.triangleImages.fcrnOnSelectedImage)
+
+                sectionView(title: "Tespit Edilen Nesnelerin Derinlik Analizi", image: viewModel.triangleImages.fcrnOnNodesImage)
+
+                sectionView(title: "Tespit Edilen Güvenli Alan", image: viewModel.triangleImages.safetyAreaImage)
+
+                sectionView(title: "Tespit Edilen Nesneler ve Graf Yapısı", image: viewModel.triangleImages.graphImage)
+            }
+            .task(id: viewModel.photosPickerItem) {
+                await viewModel.loadImage()
+            }
+            .photosPicker(isPresented: $viewModel.showPhotosPicker,
+                          selection: $viewModel.photosPickerItem,
+                          matching: .images,
+                          photoLibrary: .shared())
+            .toolbar {
+                ToolbarItemGroup(placement: .topBarTrailing) {
+                    PhotosPicker(selection: $viewModel.photosPickerItem, matching: .images, photoLibrary: .shared()) {
+                        Image(systemName: SFSymbol.photoBadgePlusFill.rawValue)
                     }
 
-//                    if let depthDetectorImage = viewModel.depthDetectorImage {
-//                        depthDetectorImage
-//                            .resizable()
-//                            .aspectRatio(contentMode: .fit)
-//                    }
-
-                    if let safetyAreaImage = viewModel.safetyAreaImage {
-                        Text("Güvenli Alan")
-                            .font(.title2)
-                            .bold()
-                            .versionForegroundColor(.orange1)
-                            .padding()
-
-                        safetyAreaImage
-                            .resizable()
-                            .aspectRatio(contentMode: .fit)
+                    Button {
+                        viewModel.clear()
+                    } label: {
+                        Image(systemName: SFSymbol.trashFill.rawValue)
                     }
                 }
             }
         }
-        .task(id: viewModel.photosPickerItem) {
-            await viewModel.loadImage()
-        }
-        .photosPicker(isPresented: $viewModel.showPhotosPicker,
-                      selection: $viewModel.photosPickerItem,
-                      matching: .images,
-                      photoLibrary: .shared())
-        .toolbar {
-            ToolbarItem(placement: .topBarTrailing) {
-                PhotosPicker(selection: $viewModel.photosPickerItem, matching: .images, photoLibrary: .shared()) {
-                    Image(systemName: "plus")
-                }
-            }
+    }
 
-            ToolbarItem(placement: .topBarLeading) {
-                Button {
-                    viewModel.clear()
-                } label: {
-                    Image(systemName: "xmark")
-                }
+    @ViewBuilder
+    func sectionView(title: String, image: Image?) -> some View {
+        if let image {
+            Section(title) {
+                image
+                    .resizable()
+                    .aspectRatio(contentMode: .fill)
             }
         }
     }

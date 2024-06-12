@@ -7,17 +7,16 @@
 
 import SwiftUI
 
-struct TriangleShape: Shape {
-    var firstPoint: CGPoint
-    var secondPoint: CGPoint
-    var thirdPoint: CGPoint
+struct Triangle: Identifiable {
+    let id = UUID().uuidString
+    var selectedImage: Image?
+    var selectedUIImage: UIImage?
+    var fullNetworkImage: Image?
+    var fullNetworkUIImage: UIImage?
+    var fcrnOnNodesImage: Image?
+    var fcrnOnSelectedImage: Image?
+    var safetyAreaImage: Image?
+    var graphImage: Image?
 
-    func path(in rect: CGRect) -> Path {
-        var path = Path()
-        path.move(to: firstPoint)
-        path.addLine(to: secondPoint)
-        path.addLine(to: thirdPoint)
-        path.addLine(to: firstPoint)
-        return path
-    }
+    static var empty: Triangle = .init()
 }

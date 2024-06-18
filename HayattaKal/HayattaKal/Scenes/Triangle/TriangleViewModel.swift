@@ -14,6 +14,7 @@ final class TriangleViewModel: ObservableObject {
     @Published var showPickerItem: Bool = false
     @Published var showAlert: Bool = false
     @Published var triangleModel: TriangleModel = .empty
+    @Published var detectedObjects = []
     var graph: Graph?
 }
 
@@ -299,8 +300,8 @@ private extension TriangleViewModel {
         let objectWidth = imageSize.width / CGFloat(heatmapWidth)
         let objectHeight = imageSize.height / CGFloat(heatmapHeight)
 
-        for node in graph.nodes {
-            var objectColorSum: CGFloat = .zero
+        for (index, node) in graph.nodes.enumerated() {
+            var objectAlphaSum: CGFloat = .zero
 
             for j in 0..<heatmapHeight {
                 for i in 0..<heatmapWidth {
@@ -322,12 +323,14 @@ private extension TriangleViewModel {
                         let color: UIColor = .init(white: 1 - alpha, alpha: 1)
                         let bpath: UIBezierPath = .init(rect: rect)
 
-                        objectColorSum += 1 - alpha
+                        objectAlphaSum += 1 - alpha
                         color.set()
                         bpath.fill()
                     }
                 }
             }
+
+            graph.nodes[index].alpha = objectAlphaSum
         }
 
         let newImage = UIGraphicsGetImageFromCurrentImageContext()

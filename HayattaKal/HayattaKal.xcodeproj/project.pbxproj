@@ -10,6 +10,7 @@
 		AA5B23BA2BBE9E98007F708F /* HayattaKalApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA5B23B92BBE9E98007F708F /* HayattaKalApp.swift */; };
 		AA5B23BE2BBE9E99007F708F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5B23BD2BBE9E99007F708F /* Assets.xcassets */; };
 		AA5B23C12BBE9E99007F708F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = AA5B23C02BBE9E99007F708F /* Preview Assets.xcassets */; };
+		BE64E3CF2C1EED0B00B302B8 /* FCRN.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = BE64E3CE2C1EED0B00B302B8 /* FCRN.mlmodel */; };
 		F0210D332C15FD3E00D0557E /* Onboarding.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D322C15FD3E00D0557E /* Onboarding.swift */; };
 		F0210D352C15FD6200D0557E /* Onboarding+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D342C15FD6200D0557E /* Onboarding+UI.swift */; };
 		F0210D372C15FD6900D0557E /* OnboardingScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0210D362C15FD6900D0557E /* OnboardingScene.swift */; };
@@ -48,7 +49,6 @@
 		F0C4BEC02C12253E001A525F /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F0C4BEBF2C12253E001A525F /* Images.xcassets */; };
 		F0C4BEC32C122656001A525F /* Triangle+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4BEC22C122656001A525F /* Triangle+UI.swift */; };
 		F0C4BEC52C12265F001A525F /* TriangleScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0C4BEC42C12265F001A525F /* TriangleScene.swift */; };
-		F0F61FF02C1674A3000F5A00 /* FCRN.mlmodel in Sources */ = {isa = PBXBuildFile; fileRef = F0F61FED2C1674A3000F5A00 /* FCRN.mlmodel */; };
 		F0F61FF32C1674DD000F5A00 /* ProfileScene.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F61FF22C1674DD000F5A00 /* ProfileScene.swift */; };
 		F0F61FF52C1674E6000F5A00 /* Profile+UI.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F61FF42C1674E6000F5A00 /* Profile+UI.swift */; };
 		F0F61FF72C1675F4000F5A00 /* ProfileViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = F0F61FF62C1675F4000F5A00 /* ProfileViewModel.swift */; };
@@ -65,6 +65,7 @@
 		AA5B23B92BBE9E98007F708F /* HayattaKalApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HayattaKalApp.swift; sourceTree = "<group>"; };
 		AA5B23BD2BBE9E99007F708F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		AA5B23C02BBE9E99007F708F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		BE64E3CE2C1EED0B00B302B8 /* FCRN.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = FCRN.mlmodel; path = ../../../../../../../Documents/HayattaKal/FCRN.mlmodel; sourceTree = "<group>"; };
 		F0210D322C15FD3E00D0557E /* Onboarding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Onboarding.swift; sourceTree = "<group>"; };
 		F0210D342C15FD6200D0557E /* Onboarding+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Onboarding+UI.swift"; sourceTree = "<group>"; };
 		F0210D362C15FD6900D0557E /* OnboardingScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingScene.swift; sourceTree = "<group>"; };
@@ -103,7 +104,6 @@
 		F0C4BEBF2C12253E001A525F /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		F0C4BEC22C122656001A525F /* Triangle+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Triangle+UI.swift"; sourceTree = "<group>"; };
 		F0C4BEC42C12265F001A525F /* TriangleScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TriangleScene.swift; sourceTree = "<group>"; };
-		F0F61FED2C1674A3000F5A00 /* FCRN.mlmodel */ = {isa = PBXFileReference; lastKnownFileType = file.mlmodel; name = FCRN.mlmodel; path = ../../../../../../../Documents/FCRN.mlmodel; sourceTree = "<group>"; };
 		F0F61FF22C1674DD000F5A00 /* ProfileScene.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileScene.swift; sourceTree = "<group>"; };
 		F0F61FF42C1674E6000F5A00 /* Profile+UI.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Profile+UI.swift"; sourceTree = "<group>"; };
 		F0F61FF62C1675F4000F5A00 /* ProfileViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewModel.swift; sourceTree = "<group>"; };
@@ -383,8 +383,8 @@
 		F0F61FEA2C16745E000F5A00 /* ML */ = {
 			isa = PBXGroup;
 			children = (
+				BE64E3CE2C1EED0B00B302B8 /* FCRN.mlmodel */,
 				F0F6202B2C1A584F000F5A00 /* HKOD.mlpackage */,
-				F0F61FED2C1674A3000F5A00 /* FCRN.mlmodel */,
 			);
 			path = ML;
 			sourceTree = "<group>";
@@ -482,6 +482,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				F0210D332C15FD3E00D0557E /* Onboarding.swift in Sources */,
+				BE64E3CF2C1EED0B00B302B8 /* FCRN.mlmodel in Sources */,
 				F038A84A2C12308C00D4E1B0 /* BaseStackView.swift in Sources */,
 				F0210D412C1606F100D0557E /* TabScene.swift in Sources */,
 				F0F61FF92C1675FF000F5A00 /* Profile.swift in Sources */,
@@ -501,7 +502,6 @@
 				F0F61FF52C1674E6000F5A00 /* Profile+UI.swift in Sources */,
 				F02225EB2C151A4B00636DC4 /* SFSymbol.swift in Sources */,
 				F0210D3C2C16046E00D0557E /* AuthScene.swift in Sources */,
-				F0F61FF02C1674A3000F5A00 /* FCRN.mlmodel in Sources */,
 				F02225DD2C1516DB00636DC4 /* Register+UI.swift in Sources */,
 				F0F6201C2C1A2147000F5A00 /* TriangleViewModel.swift in Sources */,
 				F0F620142C18C288000F5A00 /* Graph.swift in Sources */,

@@ -21,3 +21,4 @@ struct TriangleModel: Identifiable {
 
     static var empty: TriangleModel = .init()
 }
+

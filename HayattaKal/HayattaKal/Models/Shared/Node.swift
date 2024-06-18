@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Node: Identifiable, Hashable {
+struct Node: Identifiable {
     let id: String
     let type: NodeType
     var alpha: CGFloat
@@ -21,17 +21,26 @@ struct Node: Identifiable, Hashable {
         self.safetyScore = safetyScore
         self.rect = rect
     }
+}
 
-    func hash(into hasher: inout Hasher) {
-        hasher.combine(id)
-        hasher.combine(type)
-        hasher.combine(alpha)
-        hasher.combine(safetyScore)
+struct Neighbor {
+    let first: Node
+    let second: Node
+    var cost: Double
+
+    var totalSafetyScore: Double {
+        first.safetyScore + second.safetyScore
     }
 }
 
+struct DetectedNode {
+    let type: NodeType
+    let safetyScore: CGFloat
+    let rect: CGRect
+}
+
 struct SafetyNode {
-    let node: Node
-    var neighbor: Node?
-    var safetyPercentage: CGFloat
+    let first: Node
+    var second: Node?
+    var totalSafetyScore: Double
 }

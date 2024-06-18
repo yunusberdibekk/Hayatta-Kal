@@ -42,7 +42,7 @@ extension TriangleScene {
             .task(id: viewModel.pickerItem) {
                 await viewModel.loadImage()
             }
-            .alert("Dikkat! Tespit edilen \(viewModel.triangleModel.safetyNode?.node.type.name ?? "") nesnesinin sabitlenmiş olduğundan emin olmanız gerekmektedir.", isPresented: $viewModel.showAlert, actions: {
+            .alert("Dikkat! Tespit edilen \(viewModel.triangleModel.safetyNode?.first.type.name ?? "") nesnesinin sabitlenmiş olduğundan emin olmanız gerekmektedir.", isPresented: $viewModel.showAlert, actions: {
                 Button("OK") {}
             })
             .photosPicker(isPresented: $viewModel.showPickerItem,

@@ -9,16 +9,18 @@ import Foundation
 
 final class Graph: NSObject {
     var nodes: [Node] = []
-    var neighbors: [Node: [Node: Double]] = [:]
+    var neighbors: [Neighbor] = []
     
     func addNode(node: Node) {
         nodes.append(node)
-        neighbors[node] = [:]
     }
     
     func addNeighbor(firstNode: Node, secondNode: Node, cost: Double) {
-        neighbors[firstNode]?[secondNode] = cost
-        neighbors[secondNode]?[firstNode] = cost
+        let neighbor1: Neighbor = .init(first: firstNode, second: secondNode, cost: cost)
+        let neighbor2: Neighbor = .init(first: secondNode, second: firstNode, cost: cost)
+
+        neighbors.append(neighbor1)
+        neighbors.append(neighbor2)
     }
     
     func createNeighborsMatrix() -> [[Double]] {
@@ -37,7 +39,7 @@ final class Graph: NSObject {
     
     func resetNodes() {
         nodes.removeAll()
-        neighbors = [:]
+        neighbors.removeAll()
     }
 }
 
@@ -64,8 +66,8 @@ extension Graph {
                 if (nextIndex - currentIndex) == 1 {
                     addNeighbor(firstNode: currentNode,
                                 secondNode: nextNode,
-                                cost: calculateCost(from: currentNode.rect,
-                                                    to: nextNode.rect))
+                                cost: calculateCostBetweenNeighbors(from: currentNode.rect,
+                                                                    to: nextNode.rect))
                     continue
                 }
                 
@@ -78,77 +80,106 @@ extension Graph {
                     {
                         addNeighbor(firstNode: currentNode,
                                     secondNode: nextNode,
-                                    cost: calculateCost(from: currentNode.rect,
-                                                        to: nextNode.rect))
+                                    cost: calculateCostBetweenNeighbors(from: currentNode.rect,
+                                                                        to: nextNode.rect))
                     }
                 }
             }
         }
     }
-
+    
     func findSafetyNode() -> SafetyNode? {
-        if nodes.count == 2 {
-            return .init(node: nodes[0],
-                         neighbor: nodes[1],
-                         safetyPercentage: nodes[0].safetyScore)
+        if nodes.count == 1 {
+            return .init(first: nodes[0], totalSafetyScore: nodes[0].safetyScore)
+        } else if nodes.count == 2 {
+            return .init(first: nodes[0], second: nodes[1], totalSafetyScore: nodes[0].safetyScore + nodes[1].safetyScore)
         } else if nodes.count > 2 {
             let safetyNodes = nodes.sorted { $0.safetyScore > $1.safetyScore }
             var safetyNode: SafetyNode?
+            var totalSafetyScore: Double = .zero
             
-            for currentNode in safetyNodes {
-                if let neighbors = neighbors[currentNode] {
-                    for neighbor in neighbors {
-                        let key = neighbor.key
-                        
-                        if safetyNode == nil, calculateCostBetweenNeighbors(firstNode: currentNode, secondNode: key) {
-                            safetyNode = .init(
-                                node: currentNode,
-                                neighbor: key,
-                                safetyPercentage: currentNode.safetyScore + key.safetyScore)
-                        } else {
-                            if calculateCostBetweenNeighbors(firstNode: currentNode, secondNode: key), currentNode.safetyScore + key.safetyScore > safetyNode!.safetyPercentage {
-                                safetyNode = .init(
-                                    node: currentNode,
-                                    neighbor: key,
-                                    safetyPercentage: currentNode.safetyScore + key.safetyScore)
-                            }
-                        }
-                    }
+            for node in safetyNodes {
+                let neighbors = neighbors.filter { $0.first.id == node.id }
+                
+                for neighbor in neighbors where (neighbor.totalSafetyScore > totalSafetyScore) && isValidCostBetweenNeighbors(firstNode: neighbor.first, secondNode: neighbor.second) {
+                    totalSafetyScore = neighbor.totalSafetyScore
+                    safetyNode = .init(first: neighbor.first, second: neighbor.second, totalSafetyScore: neighbor.totalSafetyScore)
                 }
             }
             
-            if safetyNode == nil {
-                return .init(node: safetyNodes[0],
-                             neighbor: nil,
-                             safetyPercentage: safetyNodes[0].safetyScore)
-            } else {
-                return safetyNode
-            }
-        } else {
-            if !nodes.isEmpty {
-                return .init(node: self.nodes[0],
-                             safetyPercentage: nodes[0].safetyScore)
-            }
-            
-            return nil
+            return safetyNode
         }
+      
+        return nil
     }
+
+//    func findSafetyNode() -> SafetyNode? {
+//        if nodes.count == 2 {
+//            return .init(node: nodes[0],
+//                         neighbor: nodes[1],
+//                         safetyPercentage: nodes[0].safetyScore)
+//        } else if nodes.count > 2 {
+//            let safetyNodes = nodes.sorted { $0.safetyScore > $1.safetyScore }
+//            var safetyNode: SafetyNode?
+//
+//            for currentNode in safetyNodes {
+//                if let neighbors = neighbors[currentNode] {
+//                    for neighbor in neighbors {
+//                        let key = neighbor.key
+//
+//                        if safetyNode == nil, calculateCostBetweenNeighbors(firstNode: currentNode, secondNode: key) {
+//                            safetyNode = .init(
+//                                node: currentNode,
+//                                neighbor: key,
+//                                safetyPercentage: currentNode.safetyScore + key.safetyScore)
+//                        } else {
+//                            if calculateCostBetweenNeighbors(firstNode: currentNode, secondNode: key), currentNode.safetyScore + key.safetyScore > safetyNode!.safetyPercentage {
+//                                safetyNode = .init(
+//                                    node: currentNode,
+//                                    neighbor: key,
+//                                    safetyPercentage: currentNode.safetyScore + key.safetyScore)
+//                            }
+//                        }
+//                    }
+//                }
+//            }
+//            return safetyNode
+//            if safetyNode == nil {
+//                return .init(node: safetyNodes[0],
+//                             neighbor: nil,
+//                             safetyPercentage: safetyNodes[0].safetyScore)
+//            } else {
+//                return safetyNode
+//            }
+//        } else {
+//            if !nodes.isEmpty {
+//                return .init(node: self.nodes[0],
+//                             safetyPercentage: nodes[0].safetyScore)
+//            }
+//
+//            return nil
+//        }
+//    }
 }
 
 // MARK: - Privates
 
 private extension Graph {
     func getCost(firstNode: Node, secondNode: Node) -> Double? {
-        neighbors[firstNode]?[secondNode]
+        neighbors.first(where: { $0.first.id == firstNode.id && $0.second.id == secondNode.id })?.cost
     }
     
-    func calculateCost(from rect1: CGRect, to rect2: CGRect) -> Double {
+    func calculateCostBetweenNeighbors(from rect1: CGRect, to rect2: CGRect) -> Double {
         return abs((rect1.maxX - rect2.minX) / 0.4 / 10)
     }
     
-    func calculateCostBetweenNeighbors(firstNode: Node, secondNode: Node) -> Bool {
-        let cost = neighbors[firstNode]?[secondNode] ?? .zero
-        
-        return cost >= 1 && cost <= 60 ? true : false
+    func isValidCostBetweenNeighbors(firstNode: Node, secondNode: Node) -> Bool {
+        if let neighbor = neighbors.first(where: { $0.first.id == firstNode.id && $0.second.id == secondNode.id }) {
+            let cost = neighbor.cost
+            
+            return cost >= 1 && cost <= 60 ? true : false
+        }
+            
+        return false
     }
 }

@@ -14,7 +14,6 @@ final class TriangleViewModel: ObservableObject {
     @Published var showPickerItem: Bool = false
     @Published var showAlert: Bool = false
     @Published var triangleModel: TriangleModel = .empty
-    @Published var detectedObjects = []
     var graph: Graph?
 }
 
@@ -151,7 +150,7 @@ private extension TriangleViewModel {
             }
 
             self.callDepthDetectorRequest()
-        } else {}
+        }
     }
 
     func applyRegionBasedFilter(detections: [VNRecognizedObjectObservation]) -> [VNRecognizedObjectObservation] {
@@ -300,8 +299,8 @@ private extension TriangleViewModel {
         let objectWidth = imageSize.width / CGFloat(heatmapWidth)
         let objectHeight = imageSize.height / CGFloat(heatmapHeight)
 
-        for (index, node) in graph.nodes.enumerated() {
-            var objectAlphaSum: CGFloat = .zero
+        for node in graph.nodes {
+            var totalAlpha: CGFloat = .zero
 
             for j in 0..<heatmapHeight {
                 for i in 0..<heatmapWidth {
@@ -323,14 +322,16 @@ private extension TriangleViewModel {
                         let color: UIColor = .init(white: 1 - alpha, alpha: 1)
                         let bpath: UIBezierPath = .init(rect: rect)
 
-                        objectAlphaSum += 1 - alpha
+                        totalAlpha += 1 - alpha
                         color.set()
                         bpath.fill()
                     }
                 }
             }
 
-            graph.nodes[index].alpha = objectAlphaSum
+//            if let index = graph.nodes.firstIndex(where: { $0.id == node.id }) {
+//                self.graph?.nodes[index].alpha = totalAlpha
+//            }
         }
 
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -357,9 +358,9 @@ private extension TriangleViewModel {
         image.draw(at: CGPoint.zero)
         guard let context = UIGraphicsGetCurrentContext() else { return }
 
-        if let neighbor = safetyNode.neighbor {
-            let startPoint = CGPoint(x: safetyNode.node.rect.midX, y: safetyNode.node.rect.midY)
-            let endPoint = CGPoint(x: neighbor.rect.midX, y: neighbor.rect.midY)
+        if let secondNode = safetyNode.second {
+            let startPoint = CGPoint(x: safetyNode.first.rect.midX, y: safetyNode.first.rect.midY)
+            let endPoint = CGPoint(x: secondNode.rect.midX, y: secondNode.rect.midY)
 
             context.beginPath()
             context.move(to: startPoint)
@@ -369,12 +370,12 @@ private extension TriangleViewModel {
             context.strokePath()
             context.fillPath()
         } else {
-            let minX = safetyNode.node.rect.minX
-            let maxX = safetyNode.node.rect.maxX
-            let y = safetyNode.node.rect.origin.y + safetyNode.node.rect.height / 2
-            let height = safetyNode.node.rect.height / 2
+            let minX = safetyNode.first.rect.minX
+            let maxX = safetyNode.first.rect.maxX
+            let y = safetyNode.first.rect.origin.y + safetyNode.first.rect.height / 2
+            let height = safetyNode.first.rect.height / 2
             let rectangle = CGRect(x: minX, y: y, width: maxX - minX, height: height)
-            let safetyType = safetyNode.node.type
+            let safetyType = safetyNode.first.type
 
             if safetyType == .dolap || safetyType == .masa || safetyType == .sifonyer {
                 isSafety = false
@@ -447,31 +448,32 @@ private extension TriangleViewModel {
         context.setStrokeColor(UIColor.black.cgColor)
         context.setLineWidth(5.0)
 
-        for (node, nodeNeighbors) in graph.neighbors {
-            for (neighbor, cost) in nodeNeighbors {
-                let startPoint = CGPoint(x: node.rect.midX, y: node.rect.midY)
-                let endPoint = CGPoint(x: neighbor.rect.midX, y: neighbor.rect.midY)
+        for neighbor in graph.neighbors {
+            let startPoint = CGPoint(x: neighbor.first.rect.midX, y: neighbor.first.rect.midY)
+            let endPoint = CGPoint(x: neighbor.second.rect.midX, y: neighbor.second.rect.midY)
 
-                if let safestNodes = graph.findSafetyNode(), (node.id == safestNodes.node.id && neighbor.id == safestNodes.neighbor?.id) || (neighbor.id == safestNodes.node.id && node.id == safestNodes.neighbor?.id) {
-                    context.setStrokeColor(UIColor.red.cgColor)
-                } else {
-                    context.setStrokeColor(UIColor.black.cgColor)
-                }
+            if let safetyNode = graph.findSafetyNode(),
+               (neighbor.first.id == safetyNode.first.id && neighbor.second.id == safetyNode.second?.id) ||
+               (neighbor.second.id == safetyNode.first.id && neighbor.first.id == safetyNode.second?.id)
+            {
+                context.setStrokeColor(UIColor.red.cgColor)
 
-                context.move(to: startPoint)
-                context.addLine(to: endPoint)
-                context.strokePath()
-
-                let costText = String(format: "%.2f", cost)
-                let font = UIFont.boldSystemFont(ofSize: 28)
-                let costTextSize = costText.size(withAttributes: [NSAttributedString.Key.font: font])
-                let costTextRect = CGRect(x: (startPoint.x + endPoint.x) / 2 - costTextSize.width / 2,
-                                          y: (startPoint.y + endPoint.y) / 2 - costTextSize.height / 2,
-                                          width: costTextSize.width,
-                                          height: costTextSize.height)
-
-                costText.draw(in: costTextRect, withAttributes: [NSAttributedString.Key.font: font])
+            } else {
+                context.setStrokeColor(UIColor.black.cgColor)
             }
+
+            context.move(to: startPoint)
+            context.addLine(to: endPoint)
+            context.strokePath()
+
+            let costText = String(format: "%.2f", neighbor.cost)
+            let font = UIFont.boldSystemFont(ofSize: 28)
+            let costTextSize = costText.size(withAttributes: [NSAttributedString.Key.font: font])
+            let costTextRect = CGRect(x: (startPoint.x + endPoint.x) / 2 - costTextSize.width / 2,
+                                      y: (startPoint.y + endPoint.y) / 2 - costTextSize.height / 2,
+                                      width: costTextSize.width,
+                                      height: costTextSize.height)
+            costText.draw(in: costTextRect, withAttributes: [NSAttributedString.Key.font: font])
         }
 
         let newImage = UIGraphicsGetImageFromCurrentImageContext()

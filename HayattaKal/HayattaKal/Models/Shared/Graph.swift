@@ -101,7 +101,9 @@ extension Graph {
             for node in safetyNodes {
                 let neighbors = neighbors.filter { $0.first.id == node.id }
                 
-                for neighbor in neighbors where (neighbor.totalSafetyScore > totalSafetyScore) && isValidCostBetweenNeighbors(firstNode: neighbor.first, secondNode: neighbor.second) {
+                for neighbor in neighbors where (neighbor.totalSafetyScore > totalSafetyScore) &&
+                    isValidCostBetweenNeighbors(firstNode: neighbor.first, secondNode: neighbor.second)
+                {
                     totalSafetyScore = neighbor.totalSafetyScore
                     safetyNode = .init(first: neighbor.first, second: neighbor.second, totalSafetyScore: neighbor.totalSafetyScore)
                 }
@@ -112,54 +114,6 @@ extension Graph {
       
         return nil
     }
-
-//    func findSafetyNode() -> SafetyNode? {
-//        if nodes.count == 2 {
-//            return .init(node: nodes[0],
-//                         neighbor: nodes[1],
-//                         safetyPercentage: nodes[0].safetyScore)
-//        } else if nodes.count > 2 {
-//            let safetyNodes = nodes.sorted { $0.safetyScore > $1.safetyScore }
-//            var safetyNode: SafetyNode?
-//
-//            for currentNode in safetyNodes {
-//                if let neighbors = neighbors[currentNode] {
-//                    for neighbor in neighbors {
-//                        let key = neighbor.key
-//
-//                        if safetyNode == nil, calculateCostBetweenNeighbors(firstNode: currentNode, secondNode: key) {
-//                            safetyNode = .init(
-//                                node: currentNode,
-//                                neighbor: key,
-//                                safetyPercentage: currentNode.safetyScore + key.safetyScore)
-//                        } else {
-//                            if calculateCostBetweenNeighbors(firstNode: currentNode, secondNode: key), currentNode.safetyScore + key.safetyScore > safetyNode!.safetyPercentage {
-//                                safetyNode = .init(
-//                                    node: currentNode,
-//                                    neighbor: key,
-//                                    safetyPercentage: currentNode.safetyScore + key.safetyScore)
-//                            }
-//                        }
-//                    }
-//                }
-//            }
-//            return safetyNode
-//            if safetyNode == nil {
-//                return .init(node: safetyNodes[0],
-//                             neighbor: nil,
-//                             safetyPercentage: safetyNodes[0].safetyScore)
-//            } else {
-//                return safetyNode
-//            }
-//        } else {
-//            if !nodes.isEmpty {
-//                return .init(node: self.nodes[0],
-//                             safetyPercentage: nodes[0].safetyScore)
-//            }
-//
-//            return nil
-//        }
-//    }
 }
 
 // MARK: - Privates
@@ -177,7 +131,7 @@ private extension Graph {
         if let neighbor = neighbors.first(where: { $0.first.id == firstNode.id && $0.second.id == secondNode.id }) {
             let cost = neighbor.cost
             
-            return cost >= 1 && cost <= 60 ? true : false
+            return cost >= 5 && cost <= 60 ? true : false
         }
             
         return false

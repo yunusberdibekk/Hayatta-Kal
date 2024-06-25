@@ -10,16 +10,13 @@ import SwiftUI
 import Vision
 
 final class TriangleViewModel: ObservableObject {
-    @Published var pickerItem: PhotosPickerItem? = nil
     @Published var showPickerItem: Bool = false
     @Published var showAlert: Bool = false
     @Published var triangleModel: TriangleModel = .empty
     var graph: Graph?
-}
 
-// MARK: - Publics
+    @Published var pickerItem: PhotosPickerItem? = nil
 
-extension TriangleViewModel {
     @MainActor
     func loadImage() async {
         guard
@@ -34,7 +31,11 @@ extension TriangleViewModel {
         self.graph = Graph()
         callObjectDetectorRequest()
     }
+}
 
+// MARK: - Publics
+
+extension TriangleViewModel {
     func clearInputs() {
         self.triangleModel = .empty
         self.graph = nil
@@ -54,7 +55,6 @@ private extension TriangleViewModel {
 
         let request = VNCoreMLRequest(model: coreModel) { [weak self] request, error in
             guard let self else { return }
-
             guard error == nil else {
                 fatalError("An error occured: \(error?.localizedDescription ?? "").")
             }
@@ -73,7 +73,7 @@ private extension TriangleViewModel {
 
     func getDefaultConfig() -> MLModelConfiguration {
         let config = MLModelConfiguration()
-        config.computeUnits = .cpuAndGPU
+        config.computeUnits = .all
 
         return config
     }
@@ -122,7 +122,9 @@ private extension TriangleViewModel {
                 height: boundingBox.height * imageHeight)
 
             if let nodeType = NodeType(rawValue: highestConfidenceLbl), highestConfidence > 0.5 {
-                let safetyScore = ((rectangle.width / image.size.width) * nodeType.safetyPercentage) + (rectangle.height / image.size.height)
+                let safetyScore = ((rectangle.width / image.size.width) * nodeType.safetyPercentage)
+                    + (rectangle.height / image.size.height)
+
                 let node: Node = .init(
                     type: nodeType,
                     alpha: .zero,
@@ -163,7 +165,9 @@ private extension TriangleViewModel {
                 let distanceThreshold: CGFloat = 50.0
                 let distance = self.distanceBetween(detection.boundingBox, filteredDetection.boundingBox)
 
-                if distance < distanceThreshold, detection.labels.first?.identifier == filteredDetection.labels.first?.identifier {
+                if distance < distanceThreshold,
+                   detection.labels.first?.identifier == filteredDetection.labels.first?.identifier
+                {
                     shouldInclude = false
                     break
                 }
@@ -180,6 +184,7 @@ private extension TriangleViewModel {
     func distanceBetween(_ rect1: CGRect, _ rect2: CGRect) -> CGFloat {
         let center1 = CGPoint(x: rect1.midX, y: rect1.midY)
         let center2 = CGPoint(x: rect2.midX, y: rect2.midY)
+
         return sqrt(pow(center1.x - center2.x, 2) + pow(center1.y - center2.y, 2))
     }
 }
@@ -187,18 +192,14 @@ private extension TriangleViewModel {
 // MARK: Private + Depth Detector
 
 private extension TriangleViewModel {
-    func depthDetectorRequest() -> VNCoreMLRequest {
-        let config = MLModelConfiguration()
-        config.computeUnits = .cpuOnly
-
+    var depthDetectorRequest: VNCoreMLRequest {
         guard
-            let model = try? MLModel(contentsOf: FCRN.urlOfModelInThisBundle, configuration: config),
+            let model = try? MLModel(contentsOf: FCRN.urlOfModelInThisBundle, configuration: getDefaultConfig()),
             let coreModel = try? VNCoreMLModel(for: model)
         else { fatalError("Unable to load model.") }
 
         let request = VNCoreMLRequest(model: coreModel) { [weak self] request, error in
             guard let self else { return }
-
             guard error == nil else {
                 fatalError("An error occured: \(error?.localizedDescription ?? "").")
             }
@@ -229,7 +230,7 @@ private extension TriangleViewModel {
             let handler = VNImageRequestHandler(cgImage: cgImage, orientation: oriantation)
 
             do {
-                try handler.perform([self.depthDetectorRequest()])
+                try handler.perform([self.depthDetectorRequest])
             } catch {
                 print("Failed to perform depth detection: \(error.localizedDescription)")
             }
@@ -237,9 +238,7 @@ private extension TriangleViewModel {
     }
 
     func drawDepthDetectorRequestOnSelectedImage(heatmap: [[Double]]) {
-        guard
-            let image = triangleModel.selectedUIImage
-        else { return }
+        guard let image = triangleModel.selectedUIImage else { return }
         let imageSize = image.size
 
         UIGraphicsBeginImageContextWithOptions(imageSize, false, 0.0)
@@ -317,7 +316,6 @@ private extension TriangleViewModel {
                                              y: CGFloat(j) * objectHeight,
                                              width: objectWidth,
                                              height: objectHeight)
-
                     if rect.intersects(node.rect) {
                         let color: UIColor = .init(white: 1 - alpha, alpha: 1)
                         let bpath: UIBezierPath = .init(rect: rect)
@@ -329,9 +327,9 @@ private extension TriangleViewModel {
                 }
             }
 
-//            if let index = graph.nodes.firstIndex(where: { $0.id == node.id }) {
-//                self.graph?.nodes[index].alpha = totalAlpha
-//            }
+            if let index = graph.nodes.firstIndex(where: { $0.id == node.id }) {
+                self.graph?.nodes[index].alpha = totalAlpha
+            }
         }
 
         let newImage = UIGraphicsGetImageFromCurrentImageContext()

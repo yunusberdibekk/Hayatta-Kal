@@ -14,6 +14,11 @@ extension TriangleScene {
         ZStack {
             Color.white.ignoresSafeArea()
 
+            Button("Buton", action: {
+                // buton'a tıklayınca ne yapılacak?
+            })
+            .frame(width: 200, height: 50)
+
             List {
                 sectionView(
                     title: "Analiz Edilecek Resim",
@@ -42,13 +47,14 @@ extension TriangleScene {
             .task(id: viewModel.pickerItem) {
                 await viewModel.loadImage()
             }
-            .alert("Dikkat! Tespit edilen \(viewModel.triangleModel.safetyNode?.first.type.name ?? "") nesnesinin sabitlenmiş olduğundan emin olmanız gerekmektedir.", isPresented: $viewModel.showAlert, actions: {
-                Button("OK") {}
-            })
             .photosPicker(isPresented: $viewModel.showPickerItem,
                           selection: $viewModel.pickerItem,
                           matching: .images,
                           photoLibrary: .shared())
+
+            .alert("Dikkat! Tespit edilen \(viewModel.triangleModel.safetyNode?.first.type.name ?? "") nesnesinin sabitlenmiş olduğundan emin olmanız gerekmektedir.", isPresented: $viewModel.showAlert, actions: {
+                Button("OK") {}
+            })
             .toolbar {
                 ToolbarItemGroup(placement: .topBarTrailing) {
                     PhotosPicker(selection: $viewModel.pickerItem, matching: .images, photoLibrary: .shared()) {
